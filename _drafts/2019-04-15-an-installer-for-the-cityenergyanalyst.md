@@ -25,3 +25,6 @@ Some problems:
 - Where to host such a big zip file? Bundle it with the installer?
 - Some of the operations required (e.g. `pip install cityenergyanalyst` and `pip install -e .`) only become available once the conda environment has been extracted to the installation location
 - Unknown: Does the `%USERPROFILE%\Miniconda2\envs\cea\Scripts\cea.exe` executable need to be in that subfolder? Because, I'd like to move it to the root of the installation location... How does it know where to look?
+- How does the installer know how to update an installation?
+- How does the installer know what kind of installation is used?
+
