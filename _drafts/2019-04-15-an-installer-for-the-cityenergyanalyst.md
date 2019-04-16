@@ -27,4 +27,61 @@ Some problems:
 - Unknown: Does the `%USERPROFILE%\Miniconda2\envs\cea\Scripts\cea.exe` executable need to be in that subfolder? Because, I'd like to move it to the root of the installation location... How does it know where to look?
 - How does the installer know how to update an installation?
 - How does the installer know what kind of installation is used?
+- This installation method should also work with the computer rooms on campus (HIL E65, HIB MBS)
 
+---
+
+Proposed layout as per issue:
+
+- CEA (inside the Documents folder of the user?)
+  - CityEnergyAnalyst
+    - the repository?
+  - Dependencies
+    - what goes in here?
+  - cea.config
+    - hm... maybe this isn't such a good idea
+  - CEA.exe
+    - might be a problem with how pip works - we'll find out!
+
+As hinted at above, there might be some problems with this layout...
+
+#. GitHub Desktop has opinions on where the repository goes
+#. what's in the Dependencies folder? the conda environment?
+#. `cea.config` - how does the CEA find this at runtime? Especially since we don't know where it is
+#. `CEA.exe` might not work there. I don't know. I'll have to try this out.
+
+---
+
+Literary review: Trying to find best practices
+
+- https://superuser.com/questions/532460/where-to-install-small-programs-without-installers-on-windows
+  - apparently no rules?
+  - advice against using ProgramData? (but `Documents` not cool either...)
+  - probably best to keep it local (so, *don't use user profile*)
+  - I'm liking `ProgramData` more, but it's hard to find manually and Jimeno want's to access `cea.config` manually.
+- don't use roaming profile for storing data, as this could mess with corporate stuff
+  - (especially since scenarios and stuff can be quite large)
+  - or maybe we should?
+- what if we made the default %PROGRAMDATA% but allowed Jimeno to install wherever he wants?
+- ship git with it?
+- WAIT! Not everything _has_ to be installed by the installer! Or _included_ in the installer! The update functionality and the repo functionality etc. can be installed later on with tools we install.
+
+---
+
+There should be a start menu entry "City Energy Analyst" with ab bunch of tools
+
+- open cea command line (can we ship a cool terminal for this? msys or whatever it's called?)
+- switch version (master on GitHub, version on PyPI, dev mode - enter path to local repository)
+- run dashboard
+- install arcgis toolbox?
+- let's not install git as part of the process: instead, the user must install it himself
+- we're going to ship cmder.net (the minimal version) and set up the cea command line thing to use that
+- (optionally allow installing a portable version of git there?)
+
+---
+
+NSIS
+
+Plugins used:
+- https://nsis.sourceforge.io/Inetc_plug-in
+- https://nsis.sourceforge.io/Nsis7z_plug-in
