@@ -7,10 +7,10 @@ Up until very recently, the official guide to installing the CEA on Windows invo
 
 [Try out the CEA Installer!](https://cityenergyanalyst.com/tryit)
 
-There are two basic installation modes for the CEA:
+There are two basic installation modes for the CEA, based on [how you intend to use software](https://city-energy-analyst.readthedocs.io/en/latest/user-personas.html):
 
-- installation as a [Student or Practitioner](https://city-energy-analyst.readthedocs.io/en/latest/user-personas.html)
-- installation as a [Researcher or Developer](https://city-energy-analyst.readthedocs.io/en/latest/user-personas.html)
+- installation as a [Student or Practitioner](#installation-as-a-student-or-practitioner)
+- installation as a [Researcher or Developer](#installation-as-a-researcher-or-developer)
 
 ## Installation as a Student or Practitioner
 
@@ -18,21 +18,21 @@ Installation is as simple as runnning the installer and just accepting all the d
 
 Let's go through each step in detail:
 
-[Licence Agreement]({{site.url}}/images/2019-05-15-installing-cea-on-windows/licence-agreement.png)
+![Licence Agreement]({{site.url}}/images/2019-05-15-installing-cea-on-windows/licence-agreement.png)
 
 The CEA is released under the [MIT Licence](https://en.wikipedia.org/wiki/MIT_License). You'll need to agree to the licence terms to continue the installation by clicking on the button labled "I Agree".
 
-[Choose Install Location]({{site.url}}/images/2019-05-15-installing-cea-on-windows/choose-install-location.png)
+![Choose Install Location]({{site.url}}/images/2019-05-15-installing-cea-on-windows/choose-install-location.png)
 
 The default setting is to install the CEA in a subfolder of your Documents folder called "CityEnergyAnalyst". Yes, that's the special "Documents" folder in the "Quick access" list in Windows Explorer - this will come in handy if you're doing a Developer style installation (see bellow).
 
 You can change this setting to any folder you like as long as you have write access to that folder. Be aware, though, that in general, the CEA Documentation assumes you installed to the default location.
 
-[Choose Components]({{site.url}}/images/2019-05-15-installing-cea-on-windows/choose-components.png)
+![Choose Components]({{site.url}}/images/2019-05-15-installing-cea-on-windows/choose-components.png)
 
 The main difference between a Student/Practitioner and a Researcher/Developer style installation is the choice of the components. The default setting is to install a "Base Installation" (more on that below) and to "Create Start menu shortcuts". Additionally, you can choose to "Create Desktop shortcuts". This will install the same set of shortcuts as those in the Start menu, but on your Desktop.
 
-[Installing]({{site.url}}/images/2019-05-15-installing-cea-on-windows/installing.png)
+![Installing]({{site.url}}/images/2019-05-15-installing-cea-on-windows/installing.png)
 
 The installation will take around seven minutes. You can see a detailed view of the current progress by clicking on the button labled "Show details".
 
@@ -50,10 +50,13 @@ The installer will install the following items:
 
 The installer requires an internet connection to locate and download the Python environment.
 
-[Installation Complete]({{site.url}}/images/2019-05-15-installing-cea-on-windows/installation-complete.png)
+![Installation Complete]({{site.url}}/images/2019-05-15-installing-cea-on-windows/installation-complete.png)
 
 There. You're done. Check out the [tutorials section](https://city-energy-analyst.readthedocs.io/en/latest/tutorials.html) of our documentation for further next steps.
 
 
 ## Installation as a Researcher or Developer
 
+The installation for researchers and developers follows the same structure as that for students and practitioners. Make sure to select the "Developer version" component on the "Choose Components" page:
+
+![Choose Components (Developer Version)]({{site.url}}/images/2019-05-15-installing-cea-on-windows/choose-components-developer-version.png)
