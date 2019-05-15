@@ -67,4 +67,10 @@ If you would like to switch to another branch, pull changes from origin or push 
 
 ![GitHub Desktop Add local repository]({{site.url}}/images/2019-05-15-installing-cea-on-windows/github-desktop-add-local-repository.png)
 
+Check out the [GitHub Desktop documentation](https://help.github.com/en/desktop) for more information on how to work with GitHub repositories.
+
+If you would like to modify the source, we suggest using the [PyCharm IDE](https://www.jetbrains.com/pycharm/) - but any text editor will do. In PyCharm, open the repository (`C:\Users\{user}\Documents\CityEnergyAnalyst\CityEnergyAnalyst`). You will need to [set the Project Interpreter](https://www.jetbrains.com/help/pycharm/configuring-python-interpreter.html#add-existing-interpreter) to `C:\Users\{user}\Documents\CityEnergyAnalyst\Dependencies\Python\python.exe`
+
+![Select Python Interpreter]({{site.url}}/images/2019-05-15-installing-cea-on-windows/select-python-interpreter.png)
+
 
