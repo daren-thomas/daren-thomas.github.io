@@ -45,14 +45,14 @@ Proposed layout as per issue:
 
 As hinted at above, there might be some problems with this layout...
 
-#. GitHub Desktop has opinions on where the repository goes
-#. what's in the Dependencies folder? the conda environment?
-#. `cea.config` - how does the CEA find this at runtime? Especially since we don't know where it is
-#. `CEA.exe` might not work there. I don't know. I'll have to try this out.
+1. GitHub Desktop has opinions on where the repository goes
+2. what's in the Dependencies folder? the conda environment?
+3. `cea.config` - how does the CEA find this at runtime? Especially since we don't know where it is
+4. `CEA.exe` might not work there. I don't know. I'll have to try this out.
 
 ---
 
-Literary review: Trying to find best practices
+# Literary review: Trying to find best practices
 
 - https://superuser.com/questions/532460/where-to-install-small-programs-without-installers-on-windows
   - apparently no rules?
@@ -85,3 +85,20 @@ NSIS
 Plugins used:
 - https://nsis.sourceforge.io/Inetc_plug-in
 - https://nsis.sourceforge.io/Nsis7z_plug-in
+
+---
+
+# TODO
+
+- copy Dependencies.7z to Dependencies folder (done - easiest solution: create archive to match folder structure needed)
+- copy Daysim binaries to Dependencies folder (which ones exactly?)
+- set Daysim binaries to use based on installation...
+- copy cmder to Dependencies folder (done)
+- create dashboard runner (let's just open a shell in minimized mode... that's good enough for our use case - done)
+- create all the shortcuts (done - unless... what shortcuts do we need in addition?)
+- add extraction text for Dependencies.7z (done)
+- how to get `cea.config` to be in $INSTDIR?! (i don't think we should do that...)
+- copy config to home folder (this is hard to add in the pull request, since it doesn't exist yet...)
+- document installer (what do the options do? what get's installed?)
+  - document left-over tasks
+    - un-bind the installer to allow tracking master? (or something similar)
