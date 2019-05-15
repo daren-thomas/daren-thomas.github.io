@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: How to install the CityEnergyAnalyst (CEA) on Windows
