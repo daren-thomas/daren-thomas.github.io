@@ -20,11 +20,11 @@ Let's go through each step in detail:
 
 ![Licence Agreement]({{site.url}}/images/2019-05-15-installing-cea-on-windows/licence-agreement.png)
 
-The CEA is released under the [MIT Licence](https://en.wikipedia.org/wiki/MIT_License). You'll need to agree to the licence terms to continue the installation by clicking on the button labled "I Agree".
+The CEA is released under the [MIT License](https://en.wikipedia.org/wiki/MIT_License). You'll need to agree to the licence terms to continue the installation by clicking on the button labled "I Agree".
 
 ![Choose Install Location]({{site.url}}/images/2019-05-15-installing-cea-on-windows/choose-install-location.png)
 
-The default setting is to install the CEA in a subfolder of your Documents folder called "CityEnergyAnalyst". Yes, that's the special "Documents" folder in the "Quick access" list in Windows Explorer - this will come in handy if you're doing a Developer style installation (see bellow).
+The default setting is to install the CEA in a subfolder of your Documents folder called "CityEnergyAnalyst". Yes, that's the special "Documents" folder in the "Quick access" list in Windows Explorer - this will come in handy if you're doing a Developer style installation (see [part 2](/installing-cea-on-windows-part-2)).
 
 You can change this setting to any folder you like as long as you have write access to that folder. Be aware, though, that in general, the CEA Documentation assumes you installed to the default location.
 
