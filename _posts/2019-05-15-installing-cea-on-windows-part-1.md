@@ -3,14 +3,14 @@ layout: post
 title: How to install the CEA on Windows - part 1
 ---
 
-Up until very recently, the official guide to installing the CEA on Windows involved a bunch of [arcane steps](https://city-energy-analyst.readthedocs.io/en/latest/installation-on-windows-manual.html) that sometimes tripped up new (and experienced) users. So we set out to come up with a better solution:
+Up until very recently, the official guide to installing the City Energy Analyst (CEA) on Windows involved a bunch of [arcane steps](https://city-energy-analyst.readthedocs.io/en/latest/installation-on-windows-manual.html) that sometimes tripped up new (and experienced) users. So we set out to come up with a better solution:
 
 [Try out the CEA Installer!](https://cityenergyanalyst.com/tryit)
 
-There are two basic installation modes for the CEA, based on [how you intend to use software](https://city-energy-analyst.readthedocs.io/en/latest/user-personas.html):
+There are two installation modes for the CEA, based on [how you intend to use software](https://city-energy-analyst.readthedocs.io/en/latest/user-personas.html):
 
 - installation as a [Student or Practitioner](#installation-as-a-student-or-practitioner) (this post)
-- installation as a [Researcher or Developer](#installation-as-a-researcher-or-developer) (see [part 2](/installing-cea-on-windows-part-2))
+- installation as a [Researcher or Developer](/installing-cea-on-windows-part-2) (part 2 in this series)
 
 ## Installation as a Student or Practitioner
 
