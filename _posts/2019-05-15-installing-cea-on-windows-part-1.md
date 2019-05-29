@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to install the CityEnergyAnalyst (CEA) on Windows - part 1
+title: How to install the CEA on Windows - part 1
 ---
 
 Up until very recently, the official guide to installing the CEA on Windows involved a bunch of [arcane steps](https://city-energy-analyst.readthedocs.io/en/latest/installation-on-windows-manual.html) that sometimes tripped up new (and experienced) users. So we set out to come up with a better solution:
@@ -16,23 +16,17 @@ There are two basic installation modes for the CEA, based on [how you intend to 
 
 Installation is as simple as runnning the installer and just accepting all the default options. There. You're done.
 
+![Base installation]({{site.url}}/images/2019-05-15-installing-cea-on-windows/cea-base-installation.gif)
+
 Let's go through each step in detail:
 
-![Licence Agreement]({{site.url}}/images/2019-05-15-installing-cea-on-windows/licence-agreement.png)
-
 The CEA is released under the [MIT License](https://en.wikipedia.org/wiki/MIT_License). You'll need to agree to the licence terms to continue the installation by clicking on the button labled "I Agree".
-
-![Choose Install Location]({{site.url}}/images/2019-05-15-installing-cea-on-windows/choose-install-location.png)
 
 The default setting is to install the CEA in a subfolder of your Documents folder called "CityEnergyAnalyst". Yes, that's the special "Documents" folder in the "Quick access" list in Windows Explorer - this will come in handy if you're doing a Developer style installation (see [part 2](/installing-cea-on-windows-part-2)).
 
 You can change this setting to any folder you like as long as you have write access to that folder. Be aware, though, that in general, the CEA Documentation assumes you installed to the default location.
 
-![Choose Components]({{site.url}}/images/2019-05-15-installing-cea-on-windows/choose-components.png)
-
 The main difference between a Student/Practitioner and a Researcher/Developer style installation is the choice of the components. The default setting is to install a "Base Installation" (more on that below) and to "Create Start menu shortcuts". Additionally, you can choose to "Create Desktop shortcuts". This will install the same set of shortcuts as those in the Start menu, but on your Desktop.
-
-![Installing]({{site.url}}/images/2019-05-15-installing-cea-on-windows/installing.png)
 
 The installation will take around seven minutes. You can see a detailed view of the current progress by clicking on the button labled "Show details".
 
@@ -49,8 +43,6 @@ The installer will install the following items:
   - _Dependencies_: This folder contains the minimal [Daysim](http://daysim.ning.com/) binaries necessary to run the CEA, a Python environment with the CEA dependencies as well as the preconfigured cmder console emulator.
 
 The installer requires an internet connection to locate and download the Python environment.
-
-![Installation Complete]({{site.url}}/images/2019-05-15-installing-cea-on-windows/installation-complete.png)
 
 There. You're done. Check out the [tutorials section](https://city-energy-analyst.readthedocs.io/en/latest/tutorials.html) of our documentation for further next steps.
 
