@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How to install the CEA on Windows - part 2
-published: true
+published: false
 ---
 
 In [part 1 of this series](/installing-cea-on-windows-part-1), I showed you how to do a basic installation of the City Energy Analyst (CEA). For Researchers and Developers that would like to edit the source code of the CEA,
