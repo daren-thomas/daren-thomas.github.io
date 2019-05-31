@@ -7,14 +7,10 @@ In [part 1 of this series](/installing-cea-on-windows-part-1), I showed you how 
 this post explains how to set it up.
 
 
-[Try out the CEA Installer!](https://cityenergyanalyst.com/tryit)
+The installation for researchers and developers follows the same structure as that for students and practitioners. Download and run the [CEA Installer](https://cityenergyanalyst.com/tryit). Make sure to select the "Developer version" component on the "Choose Components" page.
 
+![Installing the developer version of the CEA]({{site.url}}/images/2019-05-15-installing-cea-on-windows/cea-developer-installation.gif)
 
-## Installation as a Researcher or Developer
-
-The installation for researchers and developers follows the same structure as that for students and practitioners. Make sure to select the "Developer version" component on the "Choose Components" page:
-
-![Choose Components (Developer Version)]({{site.url}}/images/2019-05-15-installing-cea-on-windows/choose-components-developer-version.png)
 
 The "Developer version" installs _in addition_ to the "Base Installation" a subdirectory "CityEnergyAnalyst" inside the installation folder. This is a clone of the [CEA git repository](https://github.com/architecture-building-systems/CityEnergyAnalyst) and contains the source code of the CEA. Next, the "Developer version" runs `pip install -e C:\Users\{user}\Documents\CityEnergyAnalyst\CityEnergyAnalyst`. This command ensures that the git repository is used as the current CEA version.
 
