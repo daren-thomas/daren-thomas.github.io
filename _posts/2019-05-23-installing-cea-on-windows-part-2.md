@@ -12,19 +12,17 @@ The installation for researchers and developers follows the same structure as th
 
 ![Installing the developer version of the CEA]({{site.baseurl}}/images/2019-05-15-installing-cea-on-windows/cea-developer-installation.gif)
 
-TODO:
+The "Developer version" installs _in addition_ to the "Base Installation" a subdirectory "CityEnergyAnalyst" inside the installation folder. This is a clone of the [CEA git repository](https://github.com/architecture-building-systems/CityEnergyAnalyst) and contains the source code of the CEA.
 
-- make a gif of setting up the python interpreter in PyCharm
-- make a gif of adding the local repository in GitHub Desktop
-
-The "Developer version" installs _in addition_ to the "Base Installation" a subdirectory "CityEnergyAnalyst" inside the installation folder. This is a clone of the [CEA git repository](https://github.com/architecture-building-systems/CityEnergyAnalyst) and contains the source code of the CEA. Next, the "Developer version" runs `pip install -e C:\Users\{user}\Documents\CityEnergyAnalyst\CityEnergyAnalyst`. This command ensures that the git repository is used as the current CEA version.
+![folder structure of the developer version]({{site.baseurl}}/images/2019-05-15-installing-cea-on-windows/developer_folder_structure.png)
 
 If you would like to switch to another branch, pull changes from origin or push your own changes, use the `git` command in the CEA Console or add the repository in [GitHub Desktop](https://desktop.github.com/): Select "File -> Add local repository..." from the menu (or press Ctrl + O) and navigate to the installation folder (`C:\Users\{user}\Documents\CityEnergyAnalyst`) and select the folder "CityEnergyAnalyst".
 
-![GitHub Desktop Add local repository]({{site.url}}/images/2019-05-15-installing-cea-on-windows/github-desktop-add-local-repository.png)
+![how to add the CEA repository to GitHub Desktop]({{site.baseurl}}/images/2019-05-15-installing-cea-on-windows/add-repository-to-github-desktop.gif)
 
-Check out the [GitHub Desktop documentation](https://help.github.com/en/desktop) for more information on how to work with GitHub repositories.
+Using `git` and GitHub Desktop is out of scope for this post - check out the [GitHub Desktop documentation](https://help.github.com/en/desktop) for more information on how to work with GitHub repositories. To stay on the bleeding edge of the CEA development, frequently "pull" the master branch. The Developer version of the CEA is set up to use the repository. For the geeks among you: `pip install -e %USERPROFILE%\Documents\CityEnergyAnalyst\CityEnergyAnalyst` set's up the repository to be ["editable"](https://pip.pypa.io/en/stable/reference/pip_install/#editable-installs).
+
 
 If you would like to modify the source, we suggest using the [PyCharm IDE](https://www.jetbrains.com/pycharm/) - but any text editor will do. In PyCharm, open the repository (`C:\Users\{user}\Documents\CityEnergyAnalyst\CityEnergyAnalyst`). You will need to [set the Project Interpreter](https://www.jetbrains.com/help/pycharm/configuring-python-interpreter.html#add-existing-interpreter) to `C:\Users\{user}\Documents\CityEnergyAnalyst\Dependencies\Python\python.exe`
 
-![Select Python Interpreter]({{site.url}}/images/2019-05-15-installing-cea-on-windows/select-python-interpreter.png)
+![how to set up the python interpreter in PyCharm]({{site.baseurl}}/images/2019-05-15-installing-cea-on-windows/set_up_python_interpreter_pycharm.gif)
