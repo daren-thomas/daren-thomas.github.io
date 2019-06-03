@@ -12,7 +12,6 @@ The installation for researchers and developers follows the same structure as th
 
 ![Installing the developer version of the CEA]({{site.baseurl}}/images/2019-05-15-installing-cea-on-windows/cea-developer-installation.gif)
 
-
 The "Developer version" installs _in addition_ to the "Base Installation" a subdirectory "CityEnergyAnalyst" inside the installation folder. This is a clone of the [CEA git repository](https://github.com/architecture-building-systems/CityEnergyAnalyst) and contains the source code of the CEA.
 
 ![folder structure of the developer version]({{site.baseurl}}/images/2019-05-15-installing-cea-on-windows/developer_folder_structure.png)
