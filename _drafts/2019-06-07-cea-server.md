@@ -19,4 +19,8 @@ published: false
   - checks in with cea-server
   - runs jobs and posts back results
   - does the euler version start new jobs? or does only the cea-server start those? how many?
+  - could this be a docker thing?
+  - data to work on needs to be downloaded from cea-server/db-api
+    - but since we abstract away the paths... this isn't much of a problem anymore...
+  - 
   
