@@ -1,0 +1,20 @@
+---
+published: false
+---
+## Some ideas on a server for CEA
+
+- database (mysql could do just fine or even sqlite3?)
+  - update InputLocator to get()/put() DataFrames
+  - use schemas.yml
+- cea-server
+  - must be reachable from cea-worker
+  - supervises jobs
+  - workflows (yaml?)
+  - api for locator calls
+  - manages projects / scenarios
+  - can we combine this with the dashboard somehow? should we?
+    - users and stuff would go here
+- cea-worker
+  - checks in with cea-server
+  - runs jobs and posts back results
+  
