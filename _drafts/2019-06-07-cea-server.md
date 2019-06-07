@@ -24,4 +24,6 @@ published: false
     - but since we abstract away the paths... this isn't much of a problem anymore...
   - MySqlInputLocator?
     - so cea-server and cea-database can be on two separate computers? (cea-server, e.g. ngrok.io, cea-database would be located on the ETH user mysql database accounts? something like that?
+  - worker could have a time-to-live counter... so, it would know when to stop accepting new jobs? something like that? some statistics on how long to expect a job to last?
+  - 
   
