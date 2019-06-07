@@ -22,5 +22,6 @@ published: false
   - could this be a docker thing?
   - data to work on needs to be downloaded from cea-server/db-api
     - but since we abstract away the paths... this isn't much of a problem anymore...
-  - 
+  - MySqlInputLocator?
+    - so cea-server and cea-database can be on two separate computers? (cea-server, e.g. ngrok.io, cea-database would be located on the ETH user mysql database accounts? something like that?
   
