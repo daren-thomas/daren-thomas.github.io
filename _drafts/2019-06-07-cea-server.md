@@ -14,7 +14,7 @@ published: false
   - manages projects / scenarios
   - can we combine this with the dashboard somehow? should we?
     - users and stuff would go here
-  - knows how to `bsub cea-worker` on Euler if given ssh data?
+  - knows how to `bsub cea-worker` on Euler if given ssh data? where to store ssh data? seems a little... insecure to me.
 - cea-worker
   - checks in with cea-server
   - runs jobs and posts back results
