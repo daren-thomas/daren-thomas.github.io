@@ -50,7 +50,7 @@ The `-vsync 0` parameter is something I found on the internet. I'm assuming it's
 
 Now you can edit each frame, re-arrange them, delete some, add in new ones - Just be sure to re-index them in increasing order (`mypngs-0001.png`, `mypngs-0002.png`, `mypngs-0003.png` etc.). A bit of python scripting can help with that. Something like:
 
-```
+```python
 import os
 fnames = sorted([f for f in os.listdir('.') if f.startswith('mypngs-')])
 for i, fname in enumerate(fnames):
