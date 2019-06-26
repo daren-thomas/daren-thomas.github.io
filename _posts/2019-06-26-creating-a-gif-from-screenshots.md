@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 ## Using ffmpeg to create a GIF from screenshots
 
