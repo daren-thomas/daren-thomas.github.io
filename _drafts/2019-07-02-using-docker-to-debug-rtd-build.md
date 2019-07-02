@@ -26,10 +26,24 @@ So, it seems this is the first thing RTD does, when it tries to build the projec
 
 ```bash
 cd CityEnergyAnalyst/docs
-conda create
+conda env create
 ```
 
+Ugh. I keep getting this:
 
+```
+docs@e6b1308f087f:/tmp/CityEnergyAnalyst/docs$ conda env create
+Warning: you have pip-installed dependencies in your environment file, but you do not list pip itself as one of your conda dependencies.  Conda may not use the correct pip to install your packages, and they may end up in the wrong place.  Please add an explicit pip dependency.  I'm adding one for you, but still nagging you.
+Collecting package metadata: failed
 
+CondaHTTPError: HTTP 502 BAD GATEWAY for url <https://repo.anaconda.com/pkgs/main/linux-64/repodata.json.bz2>
+Elapsed: 00:00.002946
+CF-RAY: 4f0126707effcc3a-ZRH
 
+A remote server error occurred when trying to retrieve this URL.
 
+A 500-type error (e.g. 500, 501, 502, 503, etc.) indicates the server failed to
+fulfill a valid request.  The problem may be spurious, and will resolve itself if you
+try your request again.  If the problem persists, consider notifying the maintainer
+of the remote server.
+```
