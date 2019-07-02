@@ -16,3 +16,20 @@ The  project I want to build is [CityEnergyAnalyst](https://github.com/architect
 We _do_ have a docker build of the CEA, so I think I'm going to try using the `environment.yml` included there instead.
 
 Anyway... were were we? Oh right. We have a `bash` prompt waiting to start building the code.
+
+```bash
+cd tmp
+git clone https://github.com/architecture-building-systems/CityEnergyAnalyst.git
+```
+
+So, it seems this is the first thing RTD does, when it tries to build the project. I'm doing it in tmp here to avoid creating a mess, even though I plan to just ditch the docker image when done...
+
+```bash
+cd CityEnergyAnalyst/docs
+conda create
+```
+
+
+
+
+
