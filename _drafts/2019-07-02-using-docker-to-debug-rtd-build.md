@@ -13,3 +13,4 @@ The above command should download the RTD Docker image and run bash in it intera
 
 The  project I want to build is [CityEnergyAnalyst](https://github.com/architecture-building-systems/CityEnergyAnalyst) - it uses `conda` to create it's environment and I think maybe the `environmnet.yml` file included is too heavy and that is creating some timeouts when building the documentation.
 
+We _do_ have a docker build of the CEA, so I think I'm going to try using the `environment.yml` included there instead.
