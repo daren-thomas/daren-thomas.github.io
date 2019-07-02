@@ -9,8 +9,10 @@ This is not the first time I came across the [RTD Build Process documentation](h
 docker run -it readthedocs/build:latest bash
 ```
 
-The above command should download the RTD Docker image and run bash in it interactively. I'm guessing this is the starting point for our quest.
+The above command should download the RTD Docker image and run `bash` in it interactively. I'm guessing this is the starting point for our quest.
 
 The  project I want to build is [CityEnergyAnalyst](https://github.com/architecture-building-systems/CityEnergyAnalyst) - it uses `conda` to create it's environment and I think maybe the `environmnet.yml` file included is too heavy and that is creating some timeouts when building the documentation.
 
 We _do_ have a docker build of the CEA, so I think I'm going to try using the `environment.yml` included there instead.
+
+Anyway... were were we? Oh right. We have a `bash` prompt waiting to start building the code.
