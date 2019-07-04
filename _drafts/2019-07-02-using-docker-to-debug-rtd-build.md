@@ -22,28 +22,34 @@ cd tmp
 git clone https://github.com/architecture-building-systems/CityEnergyAnalyst.git
 ```
 
+And wait while it's being cloned:
+
+```
+(base) C:\Users\darthoma>docker run -it readthedocs/build:latest bash
+docs@0c5a4358aadd:/$ cd tmp
+docs@0c5a4358aadd:/tmp$ git clone https://github.com/architecture-building-systems/CityEnergyAnalyst.git
+Cloning into 'CityEnergyAnalyst'...
+remote: Enumerating objects: 102, done.
+remote: Counting objects: 100% (102/102), done.
+remote: Compressing objects: 100% (78/78), done.
+Receiving objects:  60% (42669/70571), 807.06 MiB | 16.83 MiB/s
+```
+
+
 So, it seems this is the first thing RTD does, when it tries to build the project. I'm doing it in tmp here to avoid creating a mess, even though I plan to just ditch the docker image when done...
 
 ```bash
-cd CityEnergyAnalyst/docs
-conda env create
+cd CityEnergyAnalyst
+conda env create -f docs/environment.yml
 ```
 
-Ugh. I keep getting this:
+Wait...
 
-```
-docs@e6b1308f087f:/tmp/CityEnergyAnalyst/docs$ conda env create
-Warning: you have pip-installed dependencies in your environment file, but you do not list pip itself as one of your conda dependencies.  Conda may not use the correct pip to install your packages, and they may end up in the wrong place.  Please add an explicit pip dependency.  I'm adding one for you, but still nagging you.
-Collecting package metadata: failed
+When done, 
 
-CondaHTTPError: HTTP 502 BAD GATEWAY for url <https://repo.anaconda.com/pkgs/main/linux-64/repodata.json.bz2>
-Elapsed: 00:00.002946
-CF-RAY: 4f0126707effcc3a-ZRH
-
-A remote server error occurred when trying to retrieve this URL.
-
-A 500-type error (e.g. 500, 501, 502, 503, etc.) indicates the server failed to
-fulfill a valid request.  The problem may be spurious, and will resolve itself if you
-try your request again.  If the problem persists, consider notifying the maintainer
-of the remote server.
+```bash
+conda activate cityenergyanalyst_docs
+python setup.py install
+cd docs
+sphinx-build -b html . _build/html
 ```
