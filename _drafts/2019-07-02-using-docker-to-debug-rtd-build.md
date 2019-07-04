@@ -48,10 +48,11 @@ cd docs
 sphinx-build -b html . _build/html
 ```
 
+### A more detailed attempt
 
+So I was super smug about that, until I decided to check the [build output on RTD](https://readthedocs.org/projects/city-energy-analyst/builds/9318678/), and behold, it actually contains the commands run. So, while conceptually the above holds, let's try to replicate what the build page says:
 
 - https://docs.readthedocs.io/en/stable/config-file/v2.html
-- https://readthedocs.org/projects/city-energy-analyst/builds/9318678/
 
 So, it seems this is the first thing RTD does, when it tries to build the project. I'm doing it in tmp here to avoid creating a mess, even though I plan to just ditch the docker image when done...
 
