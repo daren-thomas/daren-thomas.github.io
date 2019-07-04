@@ -35,6 +35,8 @@ remote: Compressing objects: 100% (78/78), done.
 Receiving objects:  60% (42669/70571), 807.06 MiB | 16.83 MiB/s
 ```
 
+- https://docs.readthedocs.io/en/stable/config-file/v2.html
+- https://readthedocs.org/projects/city-energy-analyst/builds/9318678/
 
 So, it seems this is the first thing RTD does, when it tries to build the project. I'm doing it in tmp here to avoid creating a mess, even though I plan to just ditch the docker image when done...
 
@@ -48,8 +50,10 @@ Wait...
 When done, 
 
 ```bash
+conda init bash
+source /home/docs/.bashrc
 conda activate cityenergyanalyst_docs
-python setup.py install
+pip install .
 cd docs
 sphinx-build -b html . _build/html
 ```
