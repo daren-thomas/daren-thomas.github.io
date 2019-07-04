@@ -11,39 +11,51 @@ docker run -it readthedocs/build:latest bash
 
 The above command should download the RTD Docker image and run `bash` in it interactively. I'm guessing this is the starting point for our quest.
 
-The  project I want to build is [CityEnergyAnalyst](https://github.com/architecture-building-systems/CityEnergyAnalyst) - it uses `conda` to create it's environment and I think maybe the `environmnet.yml` file included is too heavy and that is creating some timeouts when building the documentation.
+The  project I want to build is [CityEnergyAnalyst](https://github.com/architecture-building-systems/CityEnergyAnalyst) - it uses `conda` to create it's environment and I suspect maybe the `environmnet.yml` file used is too heavy and that is creating sporadic timeouts when building the documentation. Hence, this dive into the inner workings of the RTD build process.
 
-We _do_ have a docker build of the CEA, so I think I'm going to try using the `environment.yml` included there instead.
-
-Anyway... were were we? Oh right. We have a `bash` prompt waiting to start building the code.
+Anyway... were were we? Oh right. We have a `bash` prompt waiting to start building the code:
 
 ```bash
 cd tmp
 git clone https://github.com/architecture-building-systems/CityEnergyAnalyst.git
 ```
 
-And wait while it's being cloned:
+Cloning takes a while, but when done, we can create the conda environment:
+
+```bash
+cd CityEnergyAnalyst
+conda env create -f docs/environment.yml
+```
+
+I tried running `conda activate cityenergyanalyst_docs`, but got a message that I needed to set up my shell to work with conda first, so these steps might also be necessary:
+
+```bash
+conda init bash
+source /home/docs/.bashrc
+```
+
+Next, we need to install the CEA itself:
 
 ```
-(base) C:\Users\darthoma>docker run -it readthedocs/build:latest bash
-docs@0c5a4358aadd:/$ cd tmp
-docs@0c5a4358aadd:/tmp$ git clone https://github.com/architecture-building-systems/CityEnergyAnalyst.git
-Cloning into 'CityEnergyAnalyst'...
-remote: Enumerating objects: 102, done.
-remote: Counting objects: 100% (102/102), done.
-remote: Compressing objects: 100% (78/78), done.
-Receiving objects:  60% (42669/70571), 807.06 MiB | 16.83 MiB/s
+conda activate cityenergyanalyst_docs
+pip install .
 ```
+
+Finally, we can build the documentation:
+
+```
+cd docs
+sphinx-build -b html . _build/html
+```
+
+
 
 - https://docs.readthedocs.io/en/stable/config-file/v2.html
 - https://readthedocs.org/projects/city-energy-analyst/builds/9318678/
 
 So, it seems this is the first thing RTD does, when it tries to build the project. I'm doing it in tmp here to avoid creating a mess, even though I plan to just ditch the docker image when done...
 
-```bash
-cd CityEnergyAnalyst
-conda env create -f docs/environment.yml
-```
+
 
 Wait...
 
