@@ -50,7 +50,7 @@ sphinx-build -b html . _build/html
 
 This simplified approach should be able to catch most of the issues that come up with the build process.
 
-### A more detailed attempt
+### A more detailed attempt (that failed)
 
 So I was super smug about that, until I decided to check the [build output on RTD](https://readthedocs.org/projects/city-energy-analyst/builds/9318678/), and behold, it actually contains the actual commands that get run. So, while conceptually the above holds, let's try to replicate what the build page says.
 
@@ -89,3 +89,5 @@ ah... of course that wasn't going to work. Let's figure out where python went to
 ```
 
 OK. So this breaks down too. It seems we didn't check out to the right folder or something. I'm going to give up here, since I think I don't really have enough information to do an _exact_ copy of what RTD does. I wonder if there is a script somewhere?
+
+BUT, it's still possible to figure out _what_ is being run from the build output and replicate that with our own paths. I'm leaving this as an exercise for the reader.
