@@ -80,10 +80,12 @@ OK. So far so good. The next one:
 /home/docs/checkouts/readthedocs.org/user_builds/city-energy-analyst/conda/latest/bin/python -m pip install -U --cache-dir /home/docs/checkouts/readthedocs.org/user_builds/city-energy-analyst/.cache/pip recommonmark readthedocs-sphinx-ext
 ```
 
-ah... of course that wasn't going to work. Let's figure out where python went to... according to `which python`, after initializing conda and activating the environment as in our first attempt, it seems it's here: `/home/docs/.conda/envs/latest/bin/python`. Let's continue by replacing the python path - after deactivating conda:
+ah... of course that wasn't going to work. Let's figure out where python went to... according to `which python`, after initializing conda and activating the environment as in our first attempt, it seems it's here: `/home/docs/.conda/envs/latest/bin/python`. Let's continue by replacing the python path - after deactivating conda again:
 
 ```
 /home/docs/.conda/envs/latest/bin/python -m pip install -U --cache-dir /home/docs/checkouts/readthedocs.org/user_builds/city-energy-analyst/.cache/pip recommonmark readthedocs-sphinx-ext
+
+/home/docs/.conda/envs/latest/bin/python -m pip install --upgrade --upgrade-strategy eager --cache-dir /home/docs/checkouts/readthedocs.org/user_builds/city-energy-analyst/.cache/pip /home/docs/checkouts/readthedocs.org/user_builds/city-energy-analyst/checkouts/latest
 ```
 
-Finally, the build could be improved by adding a [readthedocs.yml](https://docs.readthedocs.io/en/stable/config-file/v2.html) file to the project root:
+OK. So this breaks down too. It seems we didn't check out to the right folder or something. I'm going to give up here, since I think I don't really have enough information to do an _exact_ copy of what RTD does. I wonder if there is a script somewhere?
