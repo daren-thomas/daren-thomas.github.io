@@ -52,8 +52,20 @@ This simplified approach should be able to catch most of the issues that come up
 
 ### A more detailed attempt
 
-So I was super smug about that, until I decided to check the [build output on RTD](https://readthedocs.org/projects/city-energy-analyst/builds/9318678/), and behold, it actually contains the commands run. So, while conceptually the above holds, let's try to replicate what the build page says:
+So I was super smug about that, until I decided to check the [build output on RTD](https://readthedocs.org/projects/city-energy-analyst/builds/9318678/), and behold, it actually contains the actual commands that get run. So, while conceptually the above holds, let's try to replicate what the build page says.
 
-TODO: add a more detailed attempt
+But first, some stuff to get the party going... (i'm assuming this was done for the first build)
+
+```bash
+docker run -it readthedocs/build:latest bash
+cd tmp
+git clone https://github.com/architecture-building-systems/CityEnergyAnalyst.git
+cd CityEnergyAnalyst
+```
+
+And now the actuall steps as shown in the build output:
+
+```bash
+```
 
 Finally, the build could be improved by adding a [readthedocs.yml](https://docs.readthedocs.io/en/stable/config-file/v2.html) file to the project root:
