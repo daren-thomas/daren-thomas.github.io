@@ -66,6 +66,24 @@ cd CityEnergyAnalyst
 And now the actuall steps as shown in the build output:
 
 ```bash
+git remote set-url origin https://github.com/architecture-building-systems/CityEnergyAnalyst.git
+git fetch --tags --prune --prune-tags --depth 50
+git checkout --force origin/master
+git clean -d -f -f
+conda env create --quiet --name latest --file docs/environment.yml
+conda install --yes --quiet --name latest mock pillow sphinx sphinx_rtd_theme
+```
+
+OK. So far so good. The next one:
+
+```
+/home/docs/checkouts/readthedocs.org/user_builds/city-energy-analyst/conda/latest/bin/python -m pip install -U --cache-dir /home/docs/checkouts/readthedocs.org/user_builds/city-energy-analyst/.cache/pip recommonmark readthedocs-sphinx-ext
+```
+
+ah... of course that wasn't going to work. Let's figure out where python went to... according to `which python`, after initializing conda and activating the environment as in our first attempt, it seems it's here: `/home/docs/.conda/envs/latest/bin/python`. Let's continue by replacing the python path - after deactivating conda:
+
+```
+/home/docs/.conda/envs/latest/bin/python -m pip install -U --cache-dir /home/docs/checkouts/readthedocs.org/user_builds/city-energy-analyst/.cache/pip recommonmark readthedocs-sphinx-ext
 ```
 
 Finally, the build could be improved by adding a [readthedocs.yml](https://docs.readthedocs.io/en/stable/config-file/v2.html) file to the project root:
