@@ -51,7 +51,15 @@ def missing_input_files(self):
 
 The `PlotBase` class implements plotting using [Plotly](https://plot.ly/python/getting-started/). By overriding the `plot_div` and (optionally) `table_div` methods in subclasses, other plotting interfaces could be used - e.g. to produce maps etc. For the Plotly-based plots, `calc_graph()` and `layout` provides the data and the layout - so for most plots, you'll be customizing these.
 
-Each plot has a `name` and a `category_name` - these are the names shown in the CEA Dashboard when adding a new plot. The `id()` class method creates a "scripting friendly" version of this name which is used for identifying the plot in URLs and in the `dashboard.yml` file.
+Each plot has a `name` - this is the name shown in the CEA Dashboard when adding a new plot. The `id()` class method creates a "scripting friendly" version of this name which is used for identifying the plot in URLs and in the `dashboard.yml` file.
+
+A good example of a minimal subclass is `cea.plots.solar_technology_potentials.pv_monthly.PhotovoltaicMonthlyPlot` which overrides the following attributes, inheriting the rest:
+
+- `name`
+- `__init__(project, parameters, cache)`
+- `layout`
+- `calc_graph`
+- `calc_table`
 
 ## Cache
 
@@ -63,13 +71,70 @@ The cache can also be used to store pre-computed `Dataframe`s or any other objec
 
 ## Categories
 
-Each plot belongs to a category (e.g. "Energy Demand"). Since these categories collect plots that work on the same data, 
+Each plot belongs to a category (e.g. "Energy Demand"). Since these categories collect plots that work on the same data, so it's natural to have them all based off a common base class. This is defined in the `__init__.py` file for each category:
 
+```
+cea/plots
+|   base.py
+|   cache.py
+|   categories.py
+|   __init__.py
+|
++---demand
+|       comfort_chart.py
+|       energy_balance.py
+|       energy_demand.py
+|       energy_supply.py
+|       energy_supply_intensity.py
+|       energy_use_intensity.py
+|       heating_reset_schedule.py
+|       load_curve.py
+|       load_curve_supply.py
+|       load_duration_curve.py
+|       load_duration_curve_supply.py
+|       peak_load.py
+|       peak_load_supply.py
+|       __init__.py
+|
++---...
+```
 
-- base classes per category
-- cached 
+The `cea/plots/demand/__init__.py` module implements the `DemandPlotBase` class which is used for the plots in this category. It defines all the stuff that is the _same_ for Energy Demand plots.
+
+A "Category" is defined as a module in the `cea.plots.*` namespace that has a module-level variable called `name` - this is the name shown in the CEA Dashboard for the category when adding a new plot. See the `cea.plots.categories` module for more information on how the categories work - and how they find all the plots.
 
 ## Developing plots
 
--	how to run from PyCharm
--	where to find examples
+The easiest way to develop a plot is to follow the existing examples. Create a category by creating a subdirectory of `cea/plots` with an `__init__.py` modules that has a `name = "The user-visible name of your category"` as well as a base class for plots in this category. Add (ideally) one module per plot, deriving from the category base plot and implement `name`, `__init__(project, parameters, cache)`, `layout` and `calc_graph`.
+
+You can test a plot from PyCharm by adding something similar to this at the bottom of the plot module:
+
+```
+def main():
+    """Test this plot"""
+    import cea.config
+    import cea.inputlocator
+    import cea.plots.cache
+    config = cea.config.Configuration()
+    locator = cea.inputlocator.InputLocator(config.scenario)
+    cache = cea.plots.cache.PlotCache(config.project)
+    # cache = cea.plots.cache.NullPlotCache()
+    PvtMonthlyPlot(config.project, {'buildings': None,
+                                    'scenario-name': config.scenario_name,
+                                    'weather': config.weather},
+                   cache).plot(auto_open=True)
+    PvtMonthlyPlot(config.project, {'buildings': locator.get_zone_building_names()[0:2],
+                                    'scenario-name': config.scenario_name,
+                                    'weather': config.weather},
+                   cache).plot(auto_open=True)
+    PvtMonthlyPlot(config.project, {'buildings': [locator.get_zone_building_names()[0]],
+                                    'scenario-name': config.scenario_name,
+                                    'weather': config.weather},
+                   cache).plot(auto_open=True)
+
+
+if __name__ == '__main__':
+    main()
+```
+
+Note, depending on your plot, you might need to specify other parameters - or you could use `YourPlotClass.get_default_parameters()`. Also, the `cache` object can be set to `NullPlotCache` to avoid re-using pre-computed `<div/>`s.
