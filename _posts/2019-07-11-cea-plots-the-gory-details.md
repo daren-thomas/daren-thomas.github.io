@@ -26,6 +26,17 @@ The plotting system for the CEA Dashboard should be able to:
 
 ## PlotBase
 
+The class `cea.plots.PlotBase` is the basic building block of the CEA plotting system. `PlotBase` defines what it means to _be_ a CEA Plot.
+
+![PlotBase Class Diagram]({{site.baseurl}}/images/2019-07-11-cea-plots-the-gory-details/plotbase.png)
+
+Being a plot in CEA means responding to these two methods:
+
+- `plot.plot(auto_open=True)` - plot the plot to disk as an html file to a location specified by the `plot.output_path` property.
+- `plot.plot_div()` - return a `<div/>` for the plot. The CEA Dashboard will use this to display the plot inside the interface.
+
+A plot is instantiated with the `__init__(project, parameters, cache)` constructor.
+
 - layout property (also intro to @property decorator)
 - calc_graph
 - calc_table
