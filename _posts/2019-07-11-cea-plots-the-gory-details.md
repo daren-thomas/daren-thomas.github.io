@@ -35,7 +35,7 @@ Being a plot in CEA mainly means responding to these two methods:
 - `plot.plot(auto_open=True)` - plot the plot to disk as an html file to a location specified by the `plot.output_path` property.
 - `plot.plot_div()` - return a `<div/>` for the plot. The CEA Dashboard will use this to display the plot inside the interface.
 
-A plot is instantiated with the `__init__(project, parameters, cache)` constructor. The `project` parameter is the full path to the project being plotted, the `parameters` parameter is a dictionary of parameters specific to the plot - `expected_parameters` lists the parameters and relates them to the equivalent section in the `cea.config` file). The `cache` parameter is a `cea.plots.cache.PlotCache` used to avoid re-calculating plots
+A plot is instantiated with the `__init__(project, parameters, cache)` constructor. The `project` parameter is the full path to the project being plotted, the `parameters` parameter is a dictionary of parameters specific to the plot - `expected_parameters` lists the parameters and relates them to the equivalent section in the `cea.config` file). The `cache` parameter is a `cea.plots.cache.PlotCache` used to avoid re-calculating plots - we'll discuss that later.
 
 - layout property (also intro to @property decorator)
 - calc_graph
