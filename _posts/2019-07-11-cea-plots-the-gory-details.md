@@ -27,7 +27,7 @@ The plotting system for the CEA Dashboard should be able to:
 - layout property (also intro to @property decorator)
 - calc_graph
 - calc_table
-- plot parameters (expected_parameters)
+- plot parameters (expected_parameters, see also `dashboard.yml`)
 
 ## Cache
 
