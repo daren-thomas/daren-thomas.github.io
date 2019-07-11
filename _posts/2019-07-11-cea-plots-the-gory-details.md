@@ -20,6 +20,9 @@ The plotting system for the CEA Dashboard should be able to:
 - make it easy to add new plots to the CEA
 - visualize the plots fast, avoid re-creating the whole plot each time a page gets reloaded
 - store plot parameters together with the plot
+- have an offline export (to `.html` files) like the old plotting system
+- have an online version, exporting `<div/>`s for inclusion in the frontend
+- 
 
 
 ## PlotBase
