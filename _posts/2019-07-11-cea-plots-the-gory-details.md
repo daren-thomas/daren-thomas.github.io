@@ -35,19 +35,36 @@ Being a plot in CEA mainly means responding to these two methods:
 - `plot.plot(auto_open=True)` - plot the plot to disk as an html file to a location specified by the `plot.output_path` property.
 - `plot.plot_div()` - return a `<div/>` for the plot. The CEA Dashboard will use this to display the plot inside the interface.
 
-A plot is instantiated with the `__init__(project, parameters, cache)` constructor. The `project` parameter is the full path to the project being plotted, the `parameters` parameter is a dictionary of parameters specific to the plot - `expected_parameters` lists the parameters and relates them to the equivalent section in the `cea.config` file). The `cache` parameter is a `cea.plots.cache.PlotCache` used to avoid re-calculating plots - we'll discuss that later.
+A plot is instantiated with the `__init__(project, parameters, cache)` constructor. The `project` parameter is the full path to the project being plotted, the `parameters` parameter is a dictionary of parameters specific to the plot - `expected_parameters` lists the parameters and relates them to the equivalent section in the `cea.config` file). The `cache` parameter is a `cea.plots.cache.PlotCache` used to avoid re-calculating plots - we'll discuss that in a separate chapter.
 
-- layout property (also intro to @property decorator)
-- calc_graph
-- calc_table
-- plot parameters (expected_parameters, see also `dashboard.yml`)
+When a plot is initialized, it's expected to instantiate an attribute called `input_files` which is a list of input files the plot depends on - this is used to figure out if a plot can be plotted (e.g. if all the input files are present) but also to figure out if a plot needs to be re-calculated (e.g. if at least one of the input files is newer than the cached plot). An input file is specified as a tuple `(locator_method, [*args])`. See the method `missing_input_files(self)` for an example of how they are used:
+
+```
+def missing_input_files(self):
+    """Return the list of missing input files for this plot"""
+    result = []
+    for locator_method, args in self.input_files:
+        if not os.path.exists(locator_method(*args)):
+            result.append((locator_method, args))
+    return result
+```
+
+The `PlotBase` class implements plotting using [Plotly](https://plot.ly/python/getting-started/). By overriding the `plot_div` and (optionally) `table_div` methods in subclasses, other plotting interfaces could be used - e.g. to produce maps etc. For the Plotly-based plots, `calc_graph()` and `layout` provides the data and the layout - so for most plots, you'll be customizing these.
+
+Each plot has a `name` and a `category_name` - these are the names shown in the CEA Dashboard when adding a new plot. The `id()` class method creates a "scripting friendly" version of this name which is used for identifying the plot in URLs and in the `dashboard.yml` file.
 
 ## Cache
 
-- Caching (@cached decorator)
-- cached data used by multiple plots in category
+The `plot_div()` and `table_div()` methods are cached to a subfolder of the project called `.cache` using the `PlotCache` class. The cache basically compares the timestamp of the last cached version to the newest input file of a plot and if it's newer, reads in that file instead of re-creating the plot.
+
+Since the same plot can be used with different parameters (e.g. the "Energy Demand / Comfort Chart" can be shown for different buildings or scenarios in the project), the parameter values are used as part of the "key" to the cache. 
+
+The cache can also be used to store pre-computed `Dataframe`s or any other object that can `to_pickle()` itself. This is used for data that is used by multiple plots inside a category, especially, when computing the data is time-intensive.
 
 ## Categories
+
+Each plot belongs to a category (e.g. "Energy Demand"). Since these categories collect plots that work on the same data, 
+
 
 - base classes per category
 - cached 
