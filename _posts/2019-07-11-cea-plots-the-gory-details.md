@@ -13,17 +13,19 @@ This post goes into the gory details of plotting with the CEA Dashboard interfac
 - layout property (also intro to @property decorator)
 - calc_graph
 - calc_table
+- plot parameters (expected_parameters)
 
 ## Cache
 
+- Caching (@cached decorator)
 
 Let’s discuss the plotting system of the Dashboard:
 
 -	base plotting class (PlotBase)
-o	plot parameters (expected_parameters)
 o	
 o	
--	Caching (@cached decorator)
+o	
+-	
 -	Categories
 o	base classes per category
 o	cached data used by multiple plots in category
