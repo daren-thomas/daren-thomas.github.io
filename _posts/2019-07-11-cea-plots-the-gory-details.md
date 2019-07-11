@@ -26,6 +26,10 @@ The plotting system for the CEA Dashboard should be able to:
 
 ## PlotBase
 
+The class `cea.plots.PlotBase` is the basic building block of the CEA plotting system. `PlotBase` defines what it means to _be_ a CEA Plot.
+
+![PlotBase Class Diagram]({{site.baseurl}}/images/2019-07-11-cea-plots-the-gory-details/plotbase.png)
+
 - layout property (also intro to @property decorator)
 - calc_graph
 - calc_table
