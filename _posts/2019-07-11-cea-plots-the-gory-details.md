@@ -69,6 +69,27 @@ Since the same plot can be used with different parameters (e.g. the "Energy Dema
 
 The cache can also be used to store pre-computed `Dataframe`s or any other object that can `to_pickle()` itself. This is used for data that is used by multiple plots inside a category, especially, when computing the data is time-intensive.
 
+The module `cea.plots.cache` includes a decorator `@cached` that makes caching properties and methods without arguments easy to cache: As long as the property or method belongs to a plot class (ultimately derived from `cea.plots.base.PlotBase`), just sticking the `@cached` decorator above the method/property automatically sets it up to be cached. For an example, see `cea.plots.thermal_networks.ThermalNetworksPlotBase`:
+
+```python
+class ThermalNetworksPlotBase(cea.plots.PlotBase):
+    # ...
+    @property
+    @cea.plots.cache.cached
+    def hourly_loads(self):
+        hourly_loads = pd.DataFrame(self.buildings_hourly.sum(axis=1))
+        if self.network_type == 'DH':
+            hourly_loads.columns = ['Q_dem_heat']
+        else:
+            hourly_loads.columns = ['Q_dem_cool']
+        return hourly_loads
+    # ...
+```
+
+This allows all plots in the Thermal Networks category to do `df = myplot.hourly_loads` and get back the hourly loads for the buildings this plot is set up for - without recalculating them each time.
+
+There is a class `MemoryPlotCache` which takes the caching one step further and keeps the results of previously looked-up caches in memory for even faster access. Tests on my local machine have not shown much improvement, though, so I haven't set this as the default for the CEA Dashboard.
+
 ## Categories
 
 Each plot belongs to a category (e.g. "Energy Demand"). Since these categories collect plots that work on the same data, so it's natural to have them all based off a common base class. This is defined in the `__init__.py` file for each category:
