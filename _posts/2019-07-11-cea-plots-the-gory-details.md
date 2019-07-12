@@ -39,7 +39,7 @@ A plot is instantiated with the `__init__(project, parameters, cache)` construct
 
 When a plot is initialized, it's expected to instantiate an attribute called `input_files` which is a list of input files the plot depends on - this is used to figure out if a plot can be plotted (e.g. if all the input files are present) but also to figure out if a plot needs to be re-calculated (e.g. if at least one of the input files is newer than the cached plot). An input file is specified as a tuple `(locator_method, [*args])`. See the method `missing_input_files(self)` for an example of how they are used:
 
-```
+```python
 def missing_input_files(self):
     """Return the list of missing input files for this plot"""
     result = []
@@ -130,7 +130,7 @@ The easiest way to develop a plot is to follow the existing examples. Create a c
 
 You can test a plot from PyCharm by adding something similar to this at the bottom of the plot module:
 
-```
+```python
 def main():
     """Test this plot"""
     import cea.config
