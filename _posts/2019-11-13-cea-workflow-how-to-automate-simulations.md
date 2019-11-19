@@ -140,9 +140,27 @@ That's it! That's all you need to know to cobble together your own workflow YAML
 
 Check the help output for `water-body-potential` in the previous section again... especially the default value for the `--scenario` option... What's this `{general:project}\{general:scenario-name}` thingy?
 
-These are references to the [Configuration file](https://city-energy-analyst.readthedocs.io/en/latest/the-configuration-file.html). The file `cea.config`, located in your home directory, 
+These are references to the [Configuration file](https://city-energy-analyst.readthedocs.io/en/latest/the-configuration-file.html). The file `cea.config is located in your home directory. It contains the options used to run the scripts, unless you override those options when running the script in the GUI or from the CEA Console.
+
+When specifying a value for a parameter, you can use the curly braces to specify a substitution in the form: `{section:parameter}`.
 
 ## Config steps
+
+The script sections above work by using a configuration file for specifying default parameter values. A special type of step, config steps, can be used to specify the configuration file to use and also allows overriding some of those values.
+
+Config steps have a key `config` with a value specifying either
+
+- the path to a CEA config file
+
+- `default` (use the `default.config` file from the CEA source, this is the same file used to originally populate the `cea.config` file the first time the CEA is used)
+
+- `user` (use the `cea.config` file from the user's home directory - this is the same file used when using the CEA Console to run scripts)
+
+- `.` (the current configuration being used)
+
+All other keys in a config step are of the form `section:parameter` and can be used to set values for that part of the configuration file - these changes are not saved to the configuration file, but they are passed on to any subsequent script steps.
+
+The values of such assignments can include references to environment variables by using the syntax `${variable_name}`. As a special case, at startup, the workflow script creates a copy of the current user configuration file (`cea.config`), with a variable for each parameter, named `${CEA_section_parameter}`. So the current scenario could be assigned with `${CEA_general_scenario}`.
 
 ## The built-in workflows
 
@@ -155,3 +173,5 @@ There are two built-in workflows shipped with the CEA, `district-heating-system`
 These workflows run the standard CEA workflow. We use that for testing that all the scripts work. Reading the corresponding YAML files can be instructive.
 
 ## Resuming workflows
+
+Obviously you assume your workflows are just going to run through - but... especially when using `cea workflow` as a testing tool for the whole suite of CEA scripts, sometimes a workflow will stop because of an error. The `cea workflow` script keeps a file called `{general:project}/../resume-workflow.yml` that stores a dictionary mapping the workflow to the last successful step. If you run `cea workflow --resume on --workflow YOUR_WORKFLOW_HERE`, it will resume that workflow where it last crashed. 
