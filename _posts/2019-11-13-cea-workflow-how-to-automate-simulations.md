@@ -1,7 +1,7 @@
 ---
 layout: post
 title: CEA Workflow - how to automate simulations
-published: false
+published: true
 
 ---
 
