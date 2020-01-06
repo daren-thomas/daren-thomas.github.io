@@ -9,6 +9,8 @@ Hold on - we're in for a bumpy ride! Today, we're going to explore a feature of 
 
 The `cea workflow` command executes a series of CEA scripts in sequence. That's it. That's all it does.
 
+Now... why should you care? Because you can use this command to run a predefined set of CEA commands in sequence and go for a coffee while the computer does the work for you.
+
 ## Syntax
 
 You can use the `cea --help workflow` command in the CEA Console to view help for the workflow script:
@@ -57,11 +59,11 @@ cea shallow-geothermal-potential
 
 Except you don't have to wait for each script to finish before typing the next one.
 
-Each step is defined as a sequence item (a line that starts with a dash `- `)of either a script step or a config step.
+Each step is defined as a sequence item (a line that starts with a dash `-`) of either a _script step_ or a _config step_.
 
 ## Script steps
 
-Script steps have a key `script` in then specifying the script to run:
+Script steps have a key `script` in them specifying the script to run:
 
 ```yaml
 - script: water-body-potential
@@ -140,7 +142,7 @@ That's it! That's all you need to know to cobble together your own workflow YAML
 
 Check the help output for `water-body-potential` in the previous section again... especially the default value for the `--scenario` option... What's this `{general:project}\{general:scenario-name}` thingy?
 
-These are references to the [Configuration file](https://city-energy-analyst.readthedocs.io/en/latest/the-configuration-file.html). The file `cea.config is located in your home directory. It contains the options used to run the scripts, unless you override those options when running the script in the GUI or from the CEA Console.
+These are references to the [Configuration file](https://city-energy-analyst.readthedocs.io/en/latest/the-configuration-file.html). The file `cea.config` is located in your home directory. It contains the options used to run the scripts, unless you override those options when running the script in the GUI or from the CEA Console.
 
 When specifying a value for a parameter, you can use the curly braces to specify a substitution in the form: `{section:parameter}`.
 
