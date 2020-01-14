@@ -11,6 +11,8 @@ The `cea workflow` command executes a series of CEA scripts in sequence. That's 
 
 Now... why should you care? Because you can use this command to run a predefined set of CEA commands in sequence and go for a coffee while the computer does the work for you.
 
+![PlotBase Class Diagram]({{site.baseurl}}/images/2019-07-11-cea-plots-the-gory-details/plotbase.png)
+
 ## Syntax
 
 You can use the `cea --help workflow` command in the CEA Console to view help for the workflow script:
