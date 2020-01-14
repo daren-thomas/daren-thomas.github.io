@@ -61,6 +61,8 @@ Except you don't have to wait for each script to finish before typing the next o
 
 Each step is defined as a sequence item (a line that starts with a dash `-`) of either a _script step_ or a _config step_.
 
+[An example of a more interesting workflow YAML file ](https://github.com/architecture-building-systems/CityEnergyAnalyst/blob/master/cea/workflows/district_heating_system.yml) can be found in the cea source, but to understand what's going on there, let's take a dive into the way script steps and config steps work.
+
 ## Script steps
 
 Script steps have a key `script` in them specifying the script to run:
