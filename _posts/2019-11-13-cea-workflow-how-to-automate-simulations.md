@@ -2,7 +2,6 @@
 layout: post
 title: CEA Workflow - how to automate simulations
 published: true
-
 ---
 
 Hold on - we're in for a bumpy ride! Today, we're going to explore a feature of the [City Energy Analyst](https://cityenergyanalyst.com/) that is slightly hidden: The `cea workflow` command.
@@ -11,7 +10,7 @@ The `cea workflow` command executes a series of CEA scripts in sequence. That's 
 
 Now... why should you care? Because you can use this command to run a predefined set of CEA commands in sequence and go for a coffee while the computer does the work for you.
 
-![PlotBase Class Diagram]({{site.baseurl}}/images/2019-07-11-cea-plots-the-gory-details/plotbase.png)
+![Sample workflow output]({{site.baseurl}}/images/2019-11-13-cea-workflow-how-to-automate-simulations/sample-workflow-output.png)
 
 ## Syntax
 
@@ -180,4 +179,4 @@ These workflows run the standard CEA workflow. We use that for testing that all 
 
 ## Resuming workflows
 
-Obviously you assume your workflows are just going to run through - but... especially when using `cea workflow` as a testing tool for the whole suite of CEA scripts, sometimes a workflow will stop because of an error. The `cea workflow` script keeps a file called `{general:project}/../resume-workflow.yml` that stores a dictionary mapping the workflow to the last successful step. If you run `cea workflow --resume on --workflow YOUR_WORKFLOW_HERE`, it will resume that workflow where it last crashed. 
+Obviously you assume your workflows are just going to run through - but... especially when using `cea workflow` as a testing tool for the whole suite of CEA scripts, sometimes a workflow will stop because of an error. The `cea workflow` script keeps a file called `{general:project}/../resume-workflow.yml` that stores a dictionary mapping the workflow to the last successful step. If you run `cea workflow --resume on --workflow YOUR_WORKFLOW_HERE`, it will resume that workflow where it last crashed.
