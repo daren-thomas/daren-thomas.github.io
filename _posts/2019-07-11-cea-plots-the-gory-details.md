@@ -23,7 +23,6 @@ The plotting system for the CEA Dashboard should be able to:
 - have an offline export (to `.html` files) like the old plotting system
 - have an online version, exporting `<div/>`s for inclusion in the frontend
 
-
 ## PlotBase
 
 The class `cea.plots.PlotBase` is the basic building block of the CEA plotting system. `PlotBase` defines what it means to _be_ a CEA Plot.
