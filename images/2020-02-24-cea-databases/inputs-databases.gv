@@ -1,0 +1,9 @@
+digraph inputs_databases {
+    rankdir=LR;
+    inputs [fillcolor=lightblue, style=filled, shape=record
+            label="input tables|(high level description \nof your scenario)"];
+    databases [fillcolor=lightgrey, style=filled, shape=record
+               label="databases|(maps inputs to\n physical quantities)"];
+
+    inputs -> databases [style=dashed, label="   references"];
+}
