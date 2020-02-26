@@ -16,7 +16,7 @@ One of the problems of building simulation is the vast amount of variables that 
 
 When you create a new scenario, you're asked to specify the Database to use. This should normally be either "CH" (for Swiss standards) or "SG" (for Singaporean standards), but you _do_ have the option to "Create your own database later" or "Browse for databases path". These last two options play together with the new Database Editor functionality and by the end of this article you should understand how.
 
-![Create New Scenario]({{site.baseurl}}/images/2020-02-24-cea-databases/inputs-databases.png)
+![Create New Scenario]({{site.baseurl}}/images/2020-02-24-cea-databases/.png)
 
 Let's start by creating a scenario with the standard workflow:
 
