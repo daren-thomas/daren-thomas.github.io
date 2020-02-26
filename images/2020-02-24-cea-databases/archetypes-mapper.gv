@@ -1,0 +1,35 @@
+digraph archetypes_mapper {
+    graph [pad="0.5", nodesep="0.5", ranksep="2"];
+    node [shape=plain];
+    rankdir=LR;
+
+
+    typology [fillcolor=lightblue, style=filled, label="typology.dbf"];
+
+    subgraph outputs {
+        node [fillcolor=lightblue, style=filled];
+        
+        architecture[label="architecture.dbf"];
+        internal_loads[label="internal_loads.dbf"];
+        indoor_comfort[label="indoor_comfort.dbf"];
+        air_conditioning_systems[label="air_conditioning.dbf"];
+        supply_systems[label="supply_systems.dbf"];
+        schedules[label="schedules/*.csv"];
+    }
+
+    { 
+        rank=same;
+        archetypes_mapper[fillcolor=yellow, style=filled, label="Archetypes Mapper"];
+        databases[fillcolor=lightgrey, style=filled, label="Databases"];
+        databases -> archetypes_mapper
+    }
+
+    typology -> archetypes_mapper;
+
+    archetypes_mapper -> architecture;
+    archetypes_mapper -> internal_loads;
+    archetypes_mapper -> indoor_comfort;
+    archetypes_mapper -> air_conditioning_systems;
+    archetypes_mapper -> supply_systems;
+    archetypes_mapper -> schedules;
+}

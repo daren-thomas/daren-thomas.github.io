@@ -30,8 +30,20 @@ Let's start by creating a scenario with the standard workflow:
 - enter "kleinalbis" in the location search bar and click "Go"
 - use the "Draw" tool on the map to select some buildings (e.g. Kleinalbis 79-83)
 - click "Create" and wait a bit while the CEA does it's magic and routes you to the Input Editor
-  
+
 ![Selecting an area in the map for the zone file]({{site.baseurl}}/images/2020-02-24-cea-databases/select-an-area-in-the-map-for-the-zone-file.png)
+
+This will create the basic input files for your scenario: _zone_, _typology_ and _surroundings_.
+
+The [zone input file](https://city-energy-analyst.readthedocs.io/en/latest/input_methods.html#get-zone-geometry) is a [shapefile](https://en.wikipedia.org/wiki/Shapefile). It contains the polygons representing the buildings on the map and defines building names and building heights.
+
+The [surroundings input file](https://city-energy-analyst.readthedocs.io/en/latest/input_methods.html#get-surroundings-geometry) describes building geometries that are not part of the scenario itself, but might cast shadows on the zone buildings.
+
+The [typology input file](https://city-energy-analyst.readthedocs.io/en/latest/input_methods.html#get_building_typology) links the building to a construction standard, a construction year and a 1st, 2nd and 3rd "use". This information is pre-populated from the [OSM](https://en.wikipedia.org/wiki/OpenStreetMap) data in a best-effort manner. This data is used to "guess" the physical properties of the buildings in your scenario. And this exactly where the databases come in.
+
+You might have noticed that the other tables in the Input Editor (_architecture_, _internal-loads_, _indoor-comfort_, _air-conditioning-systems_, _supply-systems_, _surroundings_ and _schedules_) are empty. Instead, you're directed to use the "Archetype Mapper" tool. Click on the link and run the tool for all the input databases. This will produce the remaining input tables.
+
+![The Archetypes Mapper]({{site.baseurl}}/images/2020-02-24-cea-databases/inputs-databases.png)
 
 ![The relationship between inputs and databases]({{site.baseurl}}/images/2020-02-24-cea-databases/inputs-databases.png)
 
