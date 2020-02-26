@@ -43,7 +43,7 @@ The [typology input file](https://city-energy-analyst.readthedocs.io/en/latest/i
 
 You might have noticed that the other tables in the Input Editor (_architecture_, _internal-loads_, _indoor-comfort_, _air-conditioning-systems_, _supply-systems_, _surroundings_ and _schedules_) are empty. Instead, you're directed to use the "Archetype Mapper" tool. Click on the link and run the tool for all the input databases. This will produce the remaining input tables.
 
-![The Archetypes Mapper]({{site.baseurl}}/images/2020-02-24-cea-databases/inputs-databases.png)
+![The Archetypes Mapper]({{site.baseurl}}/images/2020-02-24-cea-databases/archetypes-mapper.png)
 
 ![The relationship between inputs and databases]({{site.baseurl}}/images/2020-02-24-cea-databases/inputs-databases.png)
 
