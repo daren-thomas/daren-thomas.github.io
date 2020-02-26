@@ -45,6 +45,20 @@ You might have noticed that the other tables in the Input Editor (_architecture_
 
 ![The Archetypes Mapper]({{site.baseurl}}/images/2020-02-24-cea-databases/archetypes-mapper.png)
 
+As you can see in the diagram above, we're already using the databases. The Archetypes Mapper uses information stored in the databases to produce the remaining input files.
+
+If you check the Database Editor, you'll see it's divided into three main categories:
+
+- Archetypes
+- Assemblies
+- Components
+
+The Archetypes Mapper uses the information stored in the Archetypes category: Construction-Standards and Use-Types. It works like this:
+
+The "STANDARD" field in the _typology_ input table is used to look up construction standards in the database (`inputs/technology/archetypes/CONSTRUCTION_STANDARD.xlsx`). The section "ENVELOPE_ASSEMBLIES" is used to create the _architecture_ input table. "HVAC_ASSEMBLIES" and "SUPPLY_ASSEMBLIES" are used for _air-conditioning-systems_ and _supply-systems_ respectively.
+
+The remaining fields ("1ST_USE", "2ND_USE", "3RD_USE") in the _typology_ input table are used to create a weighted average of the occupancy type information in the database. The fields "1ST_USE_R", "2ND_USE_R", "3RD_USE_R" give the respective ratios of that occupancy type in the building. 
+
 ![The relationship between inputs and databases]({{site.baseurl}}/images/2020-02-24-cea-databases/inputs-databases.png)
 
 - cea databases work in conjunction with the archetypes mapper and the input editor.
