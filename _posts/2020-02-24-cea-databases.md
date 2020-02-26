@@ -22,18 +22,15 @@ Let's start by creating a scenario with the standard workflow:
 
 - in the Project Overview, click "Create Project" and enter a name (e.g. "working-with-databases")
 - click "Create New Scenario"
-  - name the scenario "kleinalbis"
-  - choose the "CH" database for Switzerland
-  - select "Generate new input files using tools"
+- name the scenario "kleinalbis"
+- choose the "CH" database for Switzerlandselect "Generate new input files using tools"
   - select all the Data Management tools (select them in sequence, as their availability is dependant on previous selections)
-    - click the settings button for the Weather tool and choose "Zuerich_Kloten_1990_2010_TMY"
+  - click the settings button for the Weather tool and choose "Zuerich_Kloten_1990_2010_TMY"
   - enter "kleinalbis" in the location search bar and click "Go"
   - use the "Draw" tool on the map to select some buildings (e.g. Kleinalbis 79-83)
   - click "Create" and wait a bit while the CEA does it's magic and routes you to the Input Editor
   
 ![Selecting an area in the map for the zone file]({{site.baseurl}}/images/2020-02-24-cea-databases/select-an-area-in-the-map-for-the-zone-file.png)
-
-C:\Users\darthoma\Documents\GitHub\daren-thomas.github.io\images\2020-02-24-cea-databases\select-an-area-in-the-map-for-the-zone-file.png
 
 ![The relationship between inputs and databases]({{site.baseurl}}/images/2020-02-24-cea-databases/inputs-databases.png)
 
