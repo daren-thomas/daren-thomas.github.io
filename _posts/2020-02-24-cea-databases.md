@@ -65,9 +65,30 @@ The "STANDARD" field in the _typology_ input table is used to look up constructi
 
 The remaining fields ("1ST_USE", "2ND_USE", "3RD_USE") in the _typology_ input table are used to create a weighted average of the occupancy type information in the database. The fields "1ST_USE_R", "2ND_USE_R", "3RD_USE_R" give the respective ratios of that occupancy type in the building. This is used to produce the _internal-loads_, _indoor-comfort_ and _schedules_ tables.
 
-You can run the Archetypes Mapper multiple times and also selectively overwrite only a part of the input tables - each time, the tables are overwritten with the information taken from the Databases. Try changing the STANDARD values in the _typology_ input table for some of your buildings and run the Archetypes Mapper again.
+You can run the Archetypes Mapper multiple times and also selectively overwrite only a part of the input tables - each time, the tables are overwritten with the information taken from the Databases. Try changing the STANDARD values as well as setting the occupancy uses in the _typology_ input table for some of your buildings and run the Archetypes Mapper again.
+
+The Archetypes Mapper helps you get your scenario up and running with minimal input. Often, you'll have more information about your buildings and you'll want to manually edit the information in the input tables.
+
+## Configuring your scenario with Assmeblies
+
+The input tables reference the database to provide detailed information about the physical properties of your buildings.
 
 ![The relationship between inputs and databases]({{site.baseurl}}/images/2020-02-24-cea-databases/inputs-databases.png)
+
+Check the _architecture_ tab in the Input Editor. The fields `type_cons`, `type_leak`, `type_roof`, `type_shade`, `type_wall`, `type_floor`, `type_base` and `type_win` refer to _assemblies_ defined in the database. Hovering over the column header will show you a description of the field.
+
+Click on the `type_cons` entry for the building "B1000" - you can choose from a list of construction assemblies. The Archetype Mapper auto-assigned these based on the construction year, but you can change these values to reflect your scenario.
+
+Let's assume none of the provided construction assemblies match your building. We'll need to create our own construction assembly. Head over to the Database Editor. From the Assemblies menu, choose "Envelope". You can now edit the assemblies for construction, tightness, windows, roofs, walls, floors and shading systems.
+
+The construction assembly defines the following fields: `Description`, `code`, `Cm_Af`. Hover over the `Cm_Af` column header to see the description of this field: 
+
+> **Cm_Af** : Internal heat capacity per unit of air conditioned area. Defined according to ISO 13790. / UNIT: \[J/Km2]
+
+
+
+----
+
 
 - cea databases work in conjunction with the archetypes mapper and the input editor.
 
