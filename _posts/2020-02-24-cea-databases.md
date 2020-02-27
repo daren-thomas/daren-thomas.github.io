@@ -85,7 +85,11 @@ The construction assembly defines the following fields: `Description`, `code`, `
 
 > **Cm_Af** : Internal heat capacity per unit of air conditioned area. Defined according to ISO 13790. / UNIT: \[J/Km2]
 
+Click the "Add Row" button to add a new construction assembly and fill some information:
 
+![Adding a Construction Assembly]({{site.baseurl}}/images/2020-02-24-cea-databases/adding-construction-assembly.png)
+
+You can now use this construction assembly with your scenario in the input editor.
 
 ----
 
