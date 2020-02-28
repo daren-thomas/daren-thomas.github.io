@@ -7,6 +7,7 @@ published: true
 In [part 1 of this series](/installing-cea-on-windows-part-1), I showed you how to do a basic installation of the City Energy Analyst (CEA). For Researchers and Developers that would like to edit the source code of the CEA,
 this post explains how to set it up.
 
+<!--more-->
 
 The installation for researchers and developers follows the same structure as that for students and practitioners. Download and run the [CEA Installer](https://cityenergyanalyst.com/tryit). Make sure to select the "Developer version" component on the "Choose Components" page.
 

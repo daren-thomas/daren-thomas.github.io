@@ -1,7 +1,10 @@
 ---
 published: true
+title: Creating a GIF from screenshots
 ---
 This post is a bit of a little note to myself: The other day, when writing a post on [the new installer for the CEA](https://daren-thomas.github.io/installing-cea-on-windows-part-1/), I wanted to stitch together a bunch of screenshots into a GIF, with each screenshot showing for one second.
+
+<!--more-->
 
 ## Using ffmpeg to create a GIF from screenshots
 

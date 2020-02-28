@@ -8,6 +8,8 @@ Up until very recently, the official guide to installing the City Energy Analyst
 
 [Try out the CEA Installer!](https://cityenergyanalyst.com/tryit)
 
+<!--more-->
+
 There are two installation modes for the CEA, based on [how you intend to use software](https://city-energy-analyst.readthedocs.io/en/latest/user-personas.html):
 
 - installation as a [Student or Practitioner](#installation-as-a-student-or-practitioner) (this post)

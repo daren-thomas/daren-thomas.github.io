@@ -6,6 +6,8 @@ published: true
 
 Hold on - we're in for a bumpy ride! Today, we're going to explore a feature of the [City Energy Analyst](https://cityenergyanalyst.com/) that is slightly hidden: The `cea workflow` command.
 
+<!--more-->
+
 The `cea workflow` command executes a series of CEA scripts in sequence. That's it. That's all it does.
 
 Now... why should you care? Because you can use this command to run a predefined set of CEA commands in sequence and go for a coffee while the computer does the work for you.

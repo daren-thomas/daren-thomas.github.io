@@ -6,6 +6,8 @@ published: true
 
 This post goes into the gory details of plotting with the CEA Dashboard interface. It should help understand existing code as well as creating new plots for the CEA.
 
+<!--more-->
+
 Early 2018, the CEA introduced a system for creating plots based on the output of various CEA scripts. This system was itself a CEA script, `cea plots`, and was soon augmented with `plots-optimization`,
 `plots-scenario-comparisons` and `plots-supply-system`. These scripts were designed to create a bunch of scripts with each invocation, with a `--categories` parameter to restrict plot creation to a subset for each of the plotting scripts.
 
