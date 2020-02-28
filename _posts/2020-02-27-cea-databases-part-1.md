@@ -73,4 +73,4 @@ The remaining fields ("1ST_USE", "2ND_USE", "3RD_USE") in the _typology_ input t
 
 You can run the Archetypes Mapper multiple times and also selectively overwrite only a part of the input tables - each time, the tables are overwritten with the information taken from the Databases. Try changing the STANDARD values as well as setting the occupancy uses in the _typology_ input table for some of your buildings and run the Archetypes Mapper again.
 
-The Archetypes Mapper helps you get your scenario up and running with minimal input. Often, you'll have more information about your buildings and you'll want to manually edit the information in the input tables. This is done by selecting the appropriate Assembly in the input table and is discussed in [part 2 of this series]().
+The Archetypes Mapper helps you get your scenario up and running with minimal input. Often, you'll have more information about your buildings and you'll want to manually edit the information in the input tables. This is done by selecting the appropriate Assembly in the input table and is discussed in [part 2 of this series](/cea-databases-part-2).
