@@ -8,6 +8,8 @@ Version 2.30.0 of the City Energy Analyst (CEA) introduced a new feature: The Da
 
 ![The Database Editor]({{site.baseurl}}/images/2020-02-24-cea-databases/database-editor-screenshot.png)
 
+![The Database Editor]({{site.baseurl}}/images/2020-02-24-cea-databases/database-editor-screenshot.png)
+
 There's a lot going on here and it will take some time to explain it all.
 
 ## tl;dr
@@ -91,41 +93,27 @@ Click the "Add Row" button to add a new construction assembly and fill some info
 
 You can now use this construction assembly with your scenario in the input editor.
 
+## Components
+
+So by now we've covered Archetypes and Assemblies. To recap: Archetypes group collections of Assemblies. Archetypes are first set in the typology input table and the Assemblies get mapped to the other input tables using the Archetypes Mapper Tool. Assemblies 
+
 ----
 
+yes. definatelly. So the components/CONVERSION are used by all the scripts form energy potentials to optimization
+08:59
+the components/DISTRIBUTION are used by all the script from tehermal networks to optimization
+08:59
+the components/feedstocks are used by all the scripts from life cycle, to optimization
+08:59
+now, in regards to databases:
+09:03
+As rey said: Components/FEEDSTOCKS are referenced directly and part of the assemblies/SUPPLY.
+But also, Components/CONVERSION and Coponents/DISTRUBTION are part of assemblies/SUPPLY. However in an abstract way.
+You see, an assembly/SUPPLY should be represented by a combination of at least one Components/FEEDSTOCKS, one Components/CONVERSION, and one Components/DISTRUBTION. This si how a supply system work. In the near future we could include some validation so the user of assemblies/SUPPLY locate one feedstock, one conversion, and one distribution or more. But for now (since we do not have the models behind), it does not make too much sense to do it.
 
-- cea databases work in conjunction with the archetypes mapper and the input editor.
-
-- cea ships with two sets of databases, one for Switzerland (CH) and one for Singapore (SG)
-
-- when you create a new scenario, you choose the database to use (special case: opting out)
-
-- you can create your own databases!
+----
 
 - you can submit your databses to our repository for inclusion in future releases of the CEA.
-  
-  - or should there be some kind of community site for this?
-
-- The Database Editor manages
-  
-  - Archetypes
-    
-    - Construction-Standards
-      
-      - the archetypes-mapper uses these to set data for the input tables
-      - the input tables????
-      - does this get done in a first step when creating a scenario??? who knows???
-    
-    - Use-Types
-      
-      - Occ_m2pax    Qs_Wpax    X_ghpax    Ea_Wm2    El_Wm2    Epro_Wm2    Ed_Wm2    Vww_lpdpax    Vw_lpdpax    Qcre_Wm2    Qhpro_Wm2    Qcpro_Wm2    Ev_kWveh
-      - schedules
-    
-    - WHAT ARE ARCHETYPES ANYWAY????
-  
-  - Assemblies
-  
-  - Components
 
 - List of files that are involved
 
