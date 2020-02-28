@@ -36,4 +36,4 @@ The other two Assembly types are HVAC and Supply.
 
 The _air-conditioning-systems_ input table references the HVAC Assemblies. The _supply-systems_ input table references the Supply Assemblies. As with the Envelope Assemblies, these are first mapped to your scenario when you run the Archetypes Mapper, based on the _typology_ input table. You can, of course, edit each building's HVAC and supply systems individually in the Input Editor. Refer back to the Database Editor to see what values each Assembly defines.
 
-As with the Archetypes defined in the database - if you manually edit the Assemblies, you'll want to export the database for use in other scenarios.
+As with the Archetypes defined in the database - if you manually edit the Assemblies, you'll want to export the database for use in other scenarios. See [part 3](/cea-databases-part-3) for information about exporting and assigning databases.
