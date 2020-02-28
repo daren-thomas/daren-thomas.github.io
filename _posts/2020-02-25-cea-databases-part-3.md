@@ -45,5 +45,3 @@ You can also assign databases in an existing scenario using the Database Editor 
 ![The Database Initializer Tool](../images/2020-02-24-cea-databases/database-initializer-tool.png)
 
 Using this tool, you can revert back to the standard database or select a previously exported database. This tool also provides more fine-grained control over which parts of the database to assign: Archetypes, Assemblies and Components can be assigned separately, but note that due to the way they reference each other, you'll need to be careful to maintain data integrity.
-
-

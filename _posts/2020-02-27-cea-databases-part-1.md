@@ -8,7 +8,7 @@ Version 2.30.0 of the City Energy Analyst (CEA) introduced a new feature: The Da
 
 - jump-start your scenario with Archetypes (this post)
 - fine-tune your scenario with Assemblies ([part 2 of this series](/cea-databases-part-2))
-- calibrate simulation results with Components ([part 3 in this series](/cea-databases-part-3))
+- a few words on Components, also exporting and assigning databases ([part 3 in this series](/cea-databases-part-3))
 
 <!--more-->
 
