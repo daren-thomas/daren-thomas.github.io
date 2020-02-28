@@ -4,6 +4,10 @@ published: true
 title: Working with CEA Databases - Part 2
 ---
 
+The Archetypes Mapper mentioned in [part 1 of this series](/cea-databases-part-1) sets up basic properties for your scenario. In this post, I'll go into more detail on how to fine-tune your scenario using the Assemblies defined in the databases.
+
+<!--more-->
+
 ## Configuring your scenario with Assmeblies
 
 The input tables reference the database to provide detailed information about the physical properties of your buildings.
@@ -25,3 +29,11 @@ Click the "Add Row" button to add a new construction assembly and fill some info
 ![Adding a Construction Assembly](../images/2020-02-24-cea-databases/adding-construction-assembly.png)
 
 You can now use this construction assembly with your scenario in the input editor.
+
+The Envelope Assemblies all specify properties of a building's envelope. They are referenced from the _architecture_ input table.
+
+The other two Assembly types are HVAC and Supply.
+
+The _air-conditioning-systems_ input table references the HVAC Assemblies. The _supply-systems_ input table references the Supply Assemblies. As with the Envelope Assemblies, these are first mapped to your scenario when you run the Archetypes Mapper, based on the _typology_ input table. You can, of course, edit each building's HVAC and supply systems individually in the Input Editor. Refer back to the Database Editor to see what values each Assembly defines.
+
+As with the Archetypes defined in the database - if you manually edit the Assemblies, you'll want to export the database for use in other scenarios.
