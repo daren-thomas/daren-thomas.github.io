@@ -1,7 +1,6 @@
 ---
 layout: post
 published: true
-excerpt_separator: <!--more-->
 title: Working with CEA Databases - Part 1
 ---
 
@@ -10,6 +9,8 @@ Version 2.30.0 of the City Energy Analyst (CEA) introduced a new feature: The Da
 - jump-start your scenario with Archetypes (this post)
 - fine-tune your scenario with Assemblies (part 2 of this series)
 - calibrate simulation results with Components (part 3 in this series)
+
+<!--more-->
 
 ![The Database Editor](../images/2020-02-24-cea-databases/database-editor-screenshot.png)
 
