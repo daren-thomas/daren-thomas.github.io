@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: Working with CEA Databases - Part 1
 ---
 
