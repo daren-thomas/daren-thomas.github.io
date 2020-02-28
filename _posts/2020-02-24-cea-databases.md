@@ -6,9 +6,7 @@ title: Working with CEA Databases
 
 Version 2.30.0 of the City Energy Analyst (CEA) introduced a new feature: The Database Editor.
 
-![The Database Editor]({{site.baseurl}}/images/2020-02-24-cea-databases/database-editor-screenshot.png)
-
-![The Database Editor]({{site.baseurl}}/images/2020-02-24-cea-databases/database-editor-screenshot.png)
+![The Database Editor](../images/2020-02-24-cea-databases/database-editor-screenshot.png)
 
 There's a lot going on here and it will take some time to explain it all.
 
@@ -22,7 +20,7 @@ When you create a new scenario, you're asked to specify the Database to use. Thi
 
 ## Creating a new scenario with a standard Database (CH)
 
-![Create New Scenario]({{site.baseurl}}/images/2020-02-24-cea-databases/create-new-scenario.png)
+![Create New Scenario](../images/2020-02-24-cea-databases/create-new-scenario.png)
 
 Let's start by creating a scenario with the standard workflow:
 
@@ -37,7 +35,7 @@ Let's start by creating a scenario with the standard workflow:
 - use the "Draw" tool on the map to select some buildings (e.g. Kleinalbis 79-83)
 - click "Create" and wait a bit while the CEA does it's magic and routes you to the Input Editor
 
-![Selecting an area in the map for the zone file]({{site.baseurl}}/images/2020-02-24-cea-databases/select-an-area-in-the-map-for-the-zone-file.png)
+![Selecting an area in the map for the zone file](../images/2020-02-24-cea-databases/select-an-area-in-the-map-for-the-zone-file.png)
 
 This will create the basic input files for your scenario: _zone_, _typology_ and _surroundings_.
 
@@ -51,7 +49,7 @@ The [typology input file](https://city-energy-analyst.readthedocs.io/en/latest/i
 
 You might have noticed that the other tables in the Input Editor (_architecture_, _internal-loads_, _indoor-comfort_, _air-conditioning-systems_, _supply-systems_ and _schedules_) are empty. Instead, you're directed to use the "Archetype Mapper" tool. Click on the link and run the tool for all the input databases. This will produce the remaining input tables.
 
-![The Archetypes Mapper]({{site.baseurl}}/images/2020-02-24-cea-databases/archetypes-mapper.png)
+![The Archetypes Mapper](../images/2020-02-24-cea-databases/archetypes-mapper.png)
 
 As you can see in the diagram above, we're already using the databases. The Archetypes Mapper uses information stored in the databases to produce the remaining input files.
 
@@ -75,7 +73,7 @@ The Archetypes Mapper helps you get your scenario up and running with minimal in
 
 The input tables reference the database to provide detailed information about the physical properties of your buildings.
 
-![The relationship between inputs and databases]({{site.baseurl}}/images/2020-02-24-cea-databases/inputs-databases.png)
+![The relationship between inputs and databases](../images/2020-02-24-cea-databases/inputs-databases.png)
 
 Check the _architecture_ tab in the Input Editor. The fields `type_cons`, `type_leak`, `type_roof`, `type_shade`, `type_wall`, `type_floor`, `type_base` and `type_win` refer to _assemblies_ defined in the database. Hovering over the column header will show you a description of the field.
 
@@ -89,7 +87,7 @@ The construction assembly defines the following fields: `Description`, `code`, `
 
 Click the "Add Row" button to add a new construction assembly and fill some information:
 
-![Adding a Construction Assembly]({{site.baseurl}}/images/2020-02-24-cea-databases/adding-construction-assembly.png)
+![Adding a Construction Assembly](../images/2020-02-24-cea-databases/adding-construction-assembly.png)
 
 You can now use this construction assembly with your scenario in the input editor.
 
