@@ -49,15 +49,15 @@ The [zone input file](https://city-energy-analyst.readthedocs.io/en/latest/input
 
 The [surroundings input file](https://city-energy-analyst.readthedocs.io/en/latest/input_methods.html#get-surroundings-geometry) describes building geometries that are not part of the scenario itself, but might cast shadows on the zone buildings.
 
-The [typology input file](https://city-energy-analyst.readthedocs.io/en/latest/input_methods.html#get_building_typology) links the building to a construction standard, a construction year and a 1st, 2nd and 3rd "use". This information is pre-populated from the [OSM](https://en.wikipedia.org/wiki/OpenStreetMap) data in a best-effort manner. This data is used to "guess" the physical properties of the buildings in your scenario. And this is exactly where the databases come in.
+The [typology input file](https://city-energy-analyst.readthedocs.io/en/latest/input_methods.html#get_building_typology) links the building to a construction standard, a construction year and a 1st, 2nd and 3rd "use". This information is pre-populated from the [OSM](https://en.wikipedia.org/wiki/OpenStreetMap) data in a best-effort manner. This data is used to "guess" the physical properties of the buildings in your scenario. And this is exactly where the database comes in.
 
 ## The Archetypes Mapper and the remaining input tables
 
-You might have noticed that the other tables in the Input Editor (_architecture_, _internal-loads_, _indoor-comfort_, _air-conditioning-systems_, _supply-systems_ and _schedules_) are empty. Instead, you're directed to use the "Archetype Mapper" tool. Click on the link and run the tool for all the input databases. This will produce the remaining input tables.
+You might have noticed that the other tables in the Input Editor (_architecture_, _internal-loads_, _indoor-comfort_, _air-conditioning-systems_, _supply-systems_ and _schedules_) are empty. Instead, you're directed to use the "Archetype Mapper" tool. Click on the link and run the tool for all the input tables. This will produce the remaining input tables.
 
 ![The Archetypes Mapper](../images/2020-02-24-cea-databases/archetypes-mapper.png)
 
-As you can see in the diagram above, we're already using the databases. The Archetypes Mapper uses information stored in the databases to produce the remaining input files.
+As you can see in the diagram above, we're already using the database. The Archetypes Mapper uses information stored in the database to produce the remaining input tables.
 
 If you check the Database Editor, you'll see it's divided into three main categories:
 
@@ -67,10 +67,10 @@ If you check the Database Editor, you'll see it's divided into three main catego
 
 The Archetypes Mapper uses the information stored in the Archetypes category: Construction-Standards and Use-Types. It works like this:
 
-The "STANDARD" field in the _typology_ input table is used to look up construction standards in the database (`inputs/technology/archetypes/CONSTRUCTION_STANDARD.xlsx`). The section "ENVELOPE_ASSEMBLIES" is used to create the _architecture_ input table. "HVAC_ASSEMBLIES" and "SUPPLY_ASSEMBLIES" are used for _air-conditioning-systems_ and _supply-systems_ respectively.
+The `STANDARD` field in the _typology_ input table is used to look up construction standards in the database (`inputs/technology/archetypes/CONSTRUCTION_STANDARD.xlsx`). The section "ENVELOPE_ASSEMBLIES" is used to create the _architecture_ input table. "HVAC_ASSEMBLIES" and "SUPPLY_ASSEMBLIES" are used for _air-conditioning-systems_ and _supply-systems_ respectively.
 
-The remaining fields ("1ST_USE", "2ND_USE", "3RD_USE") in the _typology_ input table are used to create a weighted average of the occupancy type information in the database. The fields "1ST_USE_R", "2ND_USE_R", "3RD_USE_R" give the respective ratios of that occupancy type in the building. This is used to produce the _internal-loads_, _indoor-comfort_ and _schedules_ tables.
+The remaining fields (`1ST_USE`, `2ND_USE`, `3RD_USE`) in the _typology_ input table are used to create a weighted average of the occupancy type information in the database. The fields `1ST_USE_R`, `2ND_USE_R`, `3RD_USE_R` give the respective ratios of that occupancy type in the building. This is used to produce the _internal-loads_, _indoor-comfort_ and _schedules_ tables.
 
-You can run the Archetypes Mapper multiple times and also selectively overwrite only a part of the input tables - each time, the tables are overwritten with the information taken from the Databases. Try changing the STANDARD values as well as setting the occupancy uses in the _typology_ input table for some of your buildings and run the Archetypes Mapper again.
+You can run the Archetypes Mapper multiple times and also selectively overwrite only a part of the input tables - each time, the tables are overwritten with the information taken from the database. Try changing the `STANDARD` values as well as setting the occupancy uses in the _typology_ input table for some of your buildings and run the Archetypes Mapper again.
 
 The Archetypes Mapper helps you get your scenario up and running with minimal input. Often, you'll have more information about your buildings and you'll want to manually edit the information in the input tables. This is done by selecting the appropriate Assembly in the input table and is discussed in [part 2 of this series](/cea-databases-part-2).

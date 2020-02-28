@@ -4,7 +4,7 @@ published: true
 title: Working with CEA Databases - Part 2
 ---
 
-The Archetypes Mapper mentioned in [part 1 of this series](/cea-databases-part-1) sets up basic properties for your scenario. In this post, I'll go into more detail on how to fine-tune your scenario using the Assemblies defined in the databases.
+The Archetypes Mapper mentioned in [part 1 of this series](/cea-databases-part-1) sets up basic properties for your scenario. In this post, I'll go into more detail on how to fine-tune your scenario using the Assemblies defined in the database.
 
 <!--more-->
 
@@ -14,7 +14,7 @@ The input tables reference the database to provide detailed information about th
 
 ![The relationship between inputs and databases](../images/2020-02-24-cea-databases/inputs-databases.png)
 
-Check the _architecture_ tab in the Input Editor. The fields `type_cons`, `type_leak`, `type_roof`, `type_shade`, `type_wall`, `type_floor`, `type_base` and `type_win` refer to _assemblies_ defined in the database. Hovering over the column header will show you a description of the field.
+Check the _architecture_ tab in the Input Editor. The fields `type_cons`, `type_leak`, `type_roof`, `type_shade`, `type_wall`, `type_floor`, `type_base` and `type_win` refer to Assemblies defined in the database. Hovering over the column header will show you a description of the field.
 
 Click on the `type_cons` entry for the building "B1000" - you can choose from a list of construction assemblies. The Archetype Mapper auto-assigned these based on the construction year, but you can change these values to reflect your scenario.
 
