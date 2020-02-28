@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: Working with CEA Databases - Part 3
 ---
 
@@ -28,4 +28,22 @@ Let's say you're conducting analysis for a larger building cooperative - e.g. [F
 
 ![FGZ overview](https://fgzzh.ch/zh/assets/uploads/2019/10/fgz_siedlungen1.jpg)
 
-Many buildings will share common construction types and systems. You'll also have much more detailed information at hand than generic regional codes, so it makes sense to spend some time 
+Many buildings will share common construction types and systems. You'll also have much more detailed information at hand than generic regional codes, so it makes sense to spend some time configuring the database. You'll also want to re-use this work for multiple scenarios.
+
+The Database Editor can export the database to a separate folder - outside of your scenario. Use the "Export Database" button in the top-right of the Database Editor.
+
+![The Export Database Dialog](../images/2020-02-24-cea-databases/export-database-dialog.png)
+
+Enter a path (e.g. the project root of your scenarios) and a name for the database and click "Export". This will create a new folder (e.g. "FGZ Databases") that contains your customizations.
+
+## Assigning Databases
+
+When you create a new scenario, you're asked to provide the database in the "Create New Scenario" dialog. The dropdown lists "CH", "SG" and an option to browse for the database path. Just select the folder you created when exporting your database and the new scenario will be set up with your customized database.
+
+You can also assign databases in an existing scenario using the Database Editor - next to the "Export Database" you'll see a button called "Assign Database". This will bring up the Database Initializer Tool:
+
+![The Database Initializer Tool](../images/2020-02-24-cea-databases/database-initializer-tool.png)
+
+Using this tool, you can revert back to the standard database or select a previously exported database. This tool also provides more fine-grained control over which parts of the database to assign: Archetypes, Assemblies and Components can be assigned separately, but note that due to the way they reference each other, you'll need to be careful to maintain data integrity.
+
+
