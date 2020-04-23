@@ -28,6 +28,8 @@ Click the "Add Row" button to add a new construction assembly and fill some info
 
 ![Adding a Construction Assembly](../images/2020-02-24-cea-databases/adding-construction-assembly.png)
 
+Make sure to click the "Save Databases" button when you are satisfied with your changes.
+
 You can now use this construction assembly with your scenario in the input editor.
 
 The Envelope Assemblies all specify properties of a building's envelope. They are referenced from the _architecture_ input table.
