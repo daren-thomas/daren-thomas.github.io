@@ -191,5 +191,3 @@ To sum up the tutorial: The code on the pypi page shows you pretty much all you 
 ---
 
 (this post was originally published on [blogspot](https://darenatwork.blogspot.com/2014/12/))
-
-

@@ -6,6 +6,8 @@ title: Introducing the non-modal shell in RevitPythonShell
 
 You have no idea how excited I am about this release! Revision r223 of the RevitPythonShell has been tested by a select few very brave people (Ehsan Iran Nejad and Callum Freeman) and seems to work. Normally I'm not so worried about pushing out new versions, but this one is... different.
 
+<!--more-->
+
 The idea actually came from Ehsan. The Next Big Thing. Also known as the non-modal shell.
 
 I know, I know - I need to get a lot better at coming up with good names for the various parts in RevitPythonShell, but for now, that is what it is called: Non-modal shell.
