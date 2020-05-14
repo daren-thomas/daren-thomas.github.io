@@ -188,6 +188,8 @@ To sum up the tutorial: The code on the pypi page shows you pretty much all you 
 * retrieve the index of that variable
 * retrieve the time series data using that index
 
-
+---
 
 (this post was originally published on [blogspot](https://darenatwork.blogspot.com/2014/12/))
+
+
