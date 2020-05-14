@@ -6,6 +6,8 @@ title: A short tutorial on the esoreader module
 
 This post explains how to use the [`esoreader`](https://github.com/daren-thomas/esoreader), a python module for parsing the `.eso` file produced by [EnergyPlus](http://apps1.eere.energy.gov/buildings/energyplus/). It also includes a small (incomplete) reverse engineering of the `.eso` file format.
 
+<!--more-->
+
 EnergyPlus is a whole building simulation tool EnergyPlus is a whole building energy simulation program that engineers, architects, and researchers use to model energy and water use in buildings. The `.eso` file is the main output file produced by EnergyPlus and is normally parsed by tools that come with the EnergyPlus suit of tools. The `esoreader` module lets you read in the time series data in python scripts, which for my research is quite useful. I published the module thinking other people might want to do so too.
 
 Last week I got an email about how the documentation on the [pypi page for the `esoreader` module](https://pypi.python.org/pypi/esoreader) is rather... terse. So I went to check the `esoreader` page and yes, there is not a lot of documentation. The example code I published was this:
