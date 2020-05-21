@@ -15,4 +15,3 @@ The CityEnergyAnalyst consists of a core set of tools and visualizations of the 
   - default.config
 - how does all this stuff relate to the CEA itself?
 - the nitty gritty (what to do if the simple plugin is not enough?)
-
