@@ -20,6 +20,24 @@ A CEA plugin is made up of the following elements:
 
 ## A Walkthrough of the CEA plugin template
 
+We've set up a [repository with a sample CEA plugin on GitHub](https://github.com/architecture-building-systems/cea-plugin-template). It implements a script called `demand-summary` as well as a plot called "Total System Demand". Both are located under "Demand Summary". Let's take a look at the files in the template:
+
+```
+cea-plugin-template
+│   .gitignore
+│   LICENSE
+│   README.md
+│   setup.py
+│
+\---cea_plugin_template
+        demand_summary.py
+        plots.yml
+        plugin.config
+        schemas.yml
+        scripts.yml
+        __init__.py
+```
+
 ## Publishing your plugin
 
 ## Registering a CEA plugin with the CEA
@@ -51,5 +69,3 @@ Anatomy of a CEA Plugin
 Overview of what a CEA Plugin can do
 
 - note: it doesn't have to do all!
-
-
