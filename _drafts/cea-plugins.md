@@ -12,7 +12,7 @@ A CEA plugin is made up of the following elements:
 
 - a description of tools and the parameters they accept (`scripts.yml`)
 
-- a definition of those parameters - default values, descriptions, types etc. (`default.config`)
+- a definition of those parameters - default values, descriptions, types etc. (`plugin.config`)
 
 - a definition of the input and output files defined by the plugin (`schemas.yml`)
 
@@ -92,7 +92,7 @@ The `config` file contains some important information for the script:
 
 - `config.plugins` is also used for this purpose - it contains a list of all plugin classes registered with the CEA - it should also include `cea_plugin_template.DemandSummaryPlugin`.
 
-- `config.demand_summary.fudge_factor` is a plugin-specific parameter added in `default.config` - see below.
+- `config.demand_summary.fudge_factor` is a plugin-specific parameter added in `plugin.config` - see below.
 
 Note that having the following code at the bottom of your file will help you debug it more easily from the code editor - you just need to run the current file to run your script with the current configuration:
 
@@ -103,7 +103,26 @@ if __name__ == "__main__":
    main(cea.config.Configuration())
 ```
 
+### plugin.config
 
+The `plugin.config` file describes sections and parameters within those sections for use in your plugin. See the [Configuration File Details](https://city-energy-analyst.readthedocs.io/en/latest/configuration-file-details.html#configuration-file-details) section in the CEA Documentation for more information on how Configuration files work. The `plugin.config` file uses the exact same format as the `default.config` file in the CEA.
+
+Here's an example from the CEA plugin template:
+
+```ini
+[demand-summary]
+fudge-factor = 1.0
+fudge-factor.type = RealParameter
+fudge-factor.help = A factor to fudge (multiply) the results by
+```
+
+This defines a section (`demand-summary`) as well as a parameter (`fudge-factor`) to be used in scripts and plots. The `fudge-factor.type` defines the type of the parameter - see the subclasses of `cea.config.Parameter` for the list of valid parameter types. Note that plugins can't define their own parameter types.
+
+`fudge-factor.help` 
+
+
+
+The `plugin.config` file is optional. If you don't specify one, then the scripts in your plugin can only use parameters defined elsewhere - e.g. the CEA or other plugins.
 
 ### scripts.yml
 
@@ -138,9 +157,11 @@ In this example, the category name "Demand Summary" contains a single tool. Each
 
 - `module`: this is the fully qualified name of your script - the module containing the `main` function to call. This module should be importable by the `python` provided by the CEA Console. Open up the CEA Console and type `python -m cea_plugin_template.demand_summary`. If you get an Error message like `No module named cea_plugin_template.demand_summary` then you haven't installed the plugin yet.
 
-- `parameters`: This is a list of the parameters to be made available to your plugin - each parameter is written in the form `section:parameter` as it appears in the config file. Note you can add your own parameters - see `default.config` below.
+- `parameters`: This is a list of the parameters to be made available to your plugin - each parameter is written in the form `section:parameter` as it appears in the config file. Note you can add your own parameters - see `plugin.config` above.
 
 - `input-files`:  This is an (optional) list of files that need to be present before the script can run. Each entry in the list is itself a list of the form `[locator_method, arg1, arg2, ..., argn]`. The arguments to the locator method are optional. For more information on locator methods, see the description of `schemas.yml`.
+
+The `schemas.yml` file is optional. If you don't provide one, then your plugin can only work on files described elsewhere - e.g. in the CEA or other plugins.
 
 ### plots.yml
 
@@ -270,7 +291,7 @@ A column definition contains the following keys:
   - scripts.yml
   - schemas.yml
   - plots.yml
-  - default.config
+  - plugin.config
 
 - how does all this stuff relate to the CEA itself?
 
@@ -279,8 +300,6 @@ A column definition contains the following keys:
 Building a CEA plugin includes getting into the mindset of how the CEA itself is built.
 
 - Explain how the underscores work
-
-Anatomy of a CEA Plugin
 
 Overview of what a CEA Plugin can do
 
