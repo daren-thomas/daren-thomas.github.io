@@ -84,6 +84,8 @@ if __name__ == "__main__":
    main(cea.config.Configuration())
 ```
 
+FIXME: go over each line in the demand summary plugin.
+
 ### scripts.yml
 
 The `scripts.yml` file declares the list of tools defined in your plugin. This is how the CEA knows where to find the `demand-summary` script. Let's look at the contents of this file:
@@ -117,7 +119,7 @@ In this example, the category name "Demand Summary" contains a single tool. Each
 
 - `parameters`: This is a list of the parameters to be made available to your plugin - each parameter is written in the form `section:parameter` as it appears in the config file. Note you can add your own parameters - see `default.config` below.
 
-- `input-files`: 
+- `input-files`:  This is an (optional) list of files that need to be present before the script can run. Each entry in the list is itself a list of the form `[locator_method, arg1, arg2, ..., argn]`. The arguments to the locator method are optional. For more information on locator methods, see the description of `schemas.yml`.
 
 ### plots.yml
 
