@@ -123,9 +123,27 @@ In this example, the category name "Demand Summary" contains a single tool. Each
 
 ### plots.yml
 
+The `plots.yml` file describes a list of plots to add to the CEA Dashboard. As with the `scripts.yml` file, the plots are listed _by category_. In the template, the category is named "Demand Summary", the same as the category name used for the tools - It's a good idea to keep these two names in sync.
 
+```yaml
+Demand Summary:
+  - label: Total System Demand
+    data:
+      location: demand_summary
+      index: Name
+      fields:
+        - QC_sys_MWhyr
+        - QH_sys_MWhyr
+    layout:
+      kind: bar
+      title: Total System Demand
+      yTitle: "Energy Demand [MWh/yr]"
+      xTitle: Building Name
+```
 
+Each plot has a `label`: This is the name of the plot to display in the GUI when you add a plot / change a plot type:
 
+![Adding a plot in CEA GUI](../images/2020-05-25-cea-plugins/add-plot.png)
 
 ## Publishing your plugin
 
