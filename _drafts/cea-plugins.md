@@ -88,7 +88,11 @@ The `locator` variable is created using the scenario and list of plugins install
 
 The `config` file contains some important information for the script:
 
-- `config.scenario` is used in most scripts and denotes the 
+- `config.scenario` is used in most scripts to create an `InputLocator`
+
+- `config.plugins` is also used for this purpose - it contains a list of all plugin classes registered with the CEA - it should also include `cea_plugin_template.DemandSummaryPlugin`.
+
+- `config.demand_summary.fudge_factor` is a plugin-specific parameter added in `default.config` - see below.
 
 Note that having the following code at the bottom of your file will help you debug it more easily from the code editor - you just need to run the current file to run your script with the current configuration:
 
@@ -99,7 +103,7 @@ if __name__ == "__main__":
    main(cea.config.Configuration())
 ```
 
-FIXME: go over each line in the demand summary plugin.
+
 
 ### scripts.yml
 
