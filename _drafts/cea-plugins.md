@@ -88,7 +88,9 @@ FIXME: go over each line in the demand summary plugin.
 
 ### scripts.yml
 
-The `scripts.yml` file declares the list of tools defined in your plugin. This is how the CEA knows where to find the `demand-summary` script. Let's look at the contents of this file:
+The `scripts.yml` file declares the list of tools defined in your plugin. This is how the CEA knows where to find the `demand-summary` script. In fact, the CEA core uses the exact same mechanism to define it's own list of scripts - be sure to check out [the original in the CEA repository](https://github.com/architecture-building-systems/CityEnergyAnalyst/blob/master/cea/scripts.yml).
+
+Let's look at the contents of this file:
 
 ```yaml
 Demand Summary:
@@ -144,6 +146,73 @@ Demand Summary:
 Each plot has a `label`: This is the name of the plot to display in the GUI when you add a plot / change a plot type:
 
 ![Adding a plot in CEA GUI](../images/2020-05-25-cea-plugins/add-plot.png)
+
+The rest of the plot is divided into a `data` asection and a `layout` section.
+
+The `data` part of a plot definition specifies:
+
+-  `location`: the locator method to use for retrieving the data to plot - in the case of the template, `demand_summary` which is defined in `schemas.yml`.
+  
+  - NOTE: the fields `description` and `plot-color` in the description of the data columns in `schemas.yml` are used to define the text in the legend and the color of each series respectively.
+
+- `index`: the field to use as the index - if missing, no index is set on the data
+
+- `fields`: a list of field names to use - if missing, all the fields in the data are used
+
+The `layout` part specifies how the plot is to be shown. The contents are passed off to the `iplot` method from the [cufflinks library](https://github.com/santosjorge/cufflinks). Check the [documentation on the `iplot` method](https://nbviewer.ipython.org/gist/santosjorge/f3b07b2be8094deea8c6) for more information on valid parameters.
+
+The class `cea.plugin.PluginPlotBase` simplifies plot creation _a lot_ compared to how the CEA core creates plots. This comes at the expense of flexibility. If you need more fine-grained controll over your plots, you can override the `plots` property in your plugin (check `cea.plugin.CeaPlugin` for the original definition) to return your own plot classes (possibly derived from `cea.plots.base.PlotBase`) - See [CEA Plots - the Gory Details](https://daren-thomas.github.io/cea-plots-the-gory-details/) for more information on how to do that.
+
+### schemas.yml
+
+The file `schemas.yml` defines the shape of input files and output files used by scripts (and plots) in the CEA as well as their location inside a scenario.  The CEA core uses exact same mechanism for definining it's own data files - each entry in the `schemas.yml` defines a *locator method*,  a method of the `cea.inputlocator.InputLocator` class that is used throughout the CEA to locate data files.  
+
+These _locator methods_ are used in places like the `input-files` key in `scripts.yml` as well as the `location` part of `plots.yml`. They're also used for reading Dataframes from (and writing them to) disk.
+
+When the CEA creates an `InputLocator` object, the information from your plugin is appended to the list of known locator methods.
+
+Each entry in the `schemas.yml` file is the name of a locator method. Here's the example from the CEA plugin template:
+
+```yaml
+demand_summary:
+  created_by:
+  - demand-summary
+  file_path: outputs/data/demand-summary/demand-summary.csv
+  file_type: csv
+  schema:
+    columns:
+      Name:
+        description: Unique building ID. It must start with a letter.
+        type: string
+        unit: NA
+        values: alphanumeric
+      GFA_m2:
+        description: Gross floor area
+        type: float
+        unit: '[m2]'
+        min: 0.0
+        values: '{0.0...n}'
+      QC_sys_MWhyr:
+        description: Total system cooling demand
+        type: float
+        min: 0.0
+        unit: '[MWh/yr]'
+        values: '{0.0...n}'
+        plot-color: blue
+      QH_sys_MWhyr:
+        description: Total system heating demand
+        type: float
+        min: 0.0
+        unit: '[MWh/yr]'
+        values: '{0.0...n}'
+        plot-color: red
+  used_by: []
+
+```
+
+There's quite a lot going on here, so let's take it apart piece by piece:
+
+- `demand_summary` the first line defines the name of a locator method - 
 
 ## Publishing your plugin
 
