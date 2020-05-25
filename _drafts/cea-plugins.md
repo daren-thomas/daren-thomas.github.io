@@ -118,7 +118,7 @@ fudge-factor.help = A factor to fudge (multiply) the results by
 
 This defines a section (`demand-summary`) as well as a parameter (`fudge-factor`) to be used in scripts and plots. The `fudge-factor.type` defines the type of the parameter - see the subclasses of `cea.config.Parameter` for the list of valid parameter types. Note that plugins can't define their own parameter types.
 
-`fudge-factor.help` 
+`fudge-factor.help` describes the parameter - this is shown in the command line interface (CLI) when you use the `--help` parameter as well as in the GUI for running tools using this parameter.
 
 
 
