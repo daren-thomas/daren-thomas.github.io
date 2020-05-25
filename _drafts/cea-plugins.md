@@ -120,8 +120,6 @@ This defines a section (`demand-summary`) as well as a parameter (`fudge-factor`
 
 `fudge-factor.help` describes the parameter - this is shown in the command line interface (CLI) when you use the `--help` parameter as well as in the GUI for running tools using this parameter.
 
-
-
 The `plugin.config` file is optional. If you don't specify one, then the scripts in your plugin can only use parameters defined elsewhere - e.g. the CEA or other plugins.
 
 ### scripts.yml
@@ -277,7 +275,37 @@ A column definition contains the following keys:
 
 ## Publishing your plugin
 
+While developing your plugin, you can use the command `pip -e .` in the repository folder to install your plugin to python in "editable mode": This tells Python to check that folder for the current version of the source code.
+
+Once you've finished testing and debugging you can [deploy the plugin to PyP](https://realpython.com/pypi-publish-python-package/)I. This is not a requirement - you might not want to share the source with the rest of the world - but it _does_ make installation on another computer a bit easier: Your user will then just do a `pip install <yourplugin>`.
+
+Regardless of how you'll be deploying your plugin, please note that it needs to be installed in the _same_ python environment that the CEA uses. Using the `pip` method above, that means running it form the CEA Console.
+
 ## Registering a CEA plugin with the CEA
+
+The CEA config file maintains a list of CEA plugins - by default it's an empty list. You can view that list from the CEA Console with `cea-config read general:plugins`:
+
+```
+λ cea-config read general:plugins
+- general:plugins = []
+  (default: [])
+```
+
+BTW: You can use this command to read any parameter in the user config file (`cea.config` in your user profile folder).
+
+
+
+To add a plugin to that list, you can do something like this:
+
+```
+λ cea-config write --general:plugins {general:plugins}, cea_plugin_template.DemandSummaryPlugin
+```
+
+A short explaination: `cea-config` is a tool for working with the config file. You guessed that already. `write` means: write to the config file. `--general:plugins` denotes the secion and parameter the following text is to be written to. Since the plugins list is a, well, a list, it's encoded as a string with commas separating them. We have two values here: `{general:plugins}` and `cea_plugin_template.DemandSummaryPlugin`. `{general:plugins}` will be expanded to the previous list of plugins.
+
+Note: You'll need to run that in the CEA Console or an equivalent environment - either by instructing your users or writing an installer.
+
+It's also possible to manually edit the `cea.config` file located in your user folder - 
 
 ---
 
