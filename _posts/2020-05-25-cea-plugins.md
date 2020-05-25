@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: Writing your own CEA plugins
 ---
 
@@ -292,8 +292,6 @@ The CEA config file maintains a list of CEA plugins - by default it's an empty l
 ```
 
 BTW: You can use this command to read any parameter in the user config file (`cea.config` in your user profile folder).
-
-
 
 To add a plugin to that list, you can do something like this:
 
