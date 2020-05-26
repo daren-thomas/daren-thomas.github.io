@@ -1,10 +1,10 @@
 ---
 layout: post
-published: true
+published: false
 title: Writing your own CEA plugins
 ---
 
-The CityEnergyAnalyst consists of a core set of tools and visualizations of the output of those tools. This article is about extending that set with your own tools and your own visualizations. To do that, you'll need to write a CEA plugin.
+The City Energy Analyst (CEA) consists of a core set of tools and visualizations of the output of those tools. This article is about extending that set with your own tools and your own visualizations. To do that, you'll need to write a CEA plugin.
 
 This blog series will show you just how to do that. I'll be covering the following topics:
 
@@ -20,7 +20,15 @@ This blog series will show you just how to do that. I'll be covering the followi
 
 ## Introduction to core CEA concepts
 
+In this chapter, I'll present some of the core CEA concepts. This will help you understand how CEA plugins fit into the ecosystem.
 
+The CEA is, at it's core, a collection of tools (sometimes called "scripts") and plots. The two official interfaces to the CEA are the GUI (Graphical User Interface) and the CLI (Command Line Interface).
+
+![Toplevel view of the CEA](../images/2020-05-25-cea-plugins/cea-overview.png)
+
+Each tool reads in input files and produces output files, based on the parameters passed to the tool - e.g. the scenario to work on, what type of network to simulate, which buildings to consider etc.
+
+Similarly, each plot displays data based on input files, and can be configured with parameters - e.g. which buildings to plot.
 
 ## Anatomy of a CEA plugin
 

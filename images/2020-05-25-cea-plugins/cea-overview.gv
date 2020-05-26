@@ -1,0 +1,30 @@
+digraph archetypes_mapper {
+    graph [pad="0.5", nodesep="0.5", ranksep="1"];
+    node [shape=plain];
+    rankdir=TD;
+
+
+    # typology [fillcolor=lightblue, style=filled, label="typology.dbf"];
+
+    cea [fillcolor=yellow, style=filled, label="City Energy Analyst"];
+    cea -> scripts;
+    cea -> plots;
+
+    input_files
+
+    scripts [fillcolor=lightblue, style=filled, label="Tools"];
+    scripts -> input_files;
+    scripts -> output_files;
+    scripts -> script_parameters;
+
+    plots [fillcolor=lightblue, style=filled, label="Plots"];
+    plots -> plot_parameters;
+    plots -> plot_files;
+
+    input_files [label="Input files"];
+    output_files [label="Output files"];
+    plot_files [label="Input files"];
+
+    script_parameters [label="Tool Parameters"];
+    plot_parameters [label="Plot Parameters"];
+}
