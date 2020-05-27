@@ -18,18 +18,6 @@ This is part 2 in a series of articles on CEA plugins:
 
 - [Part 6: Publish your plugin and claim your T-Shirt](2020-05-25-cea-plugins-part-6)
 
-## Anatomy of a CEA plugin
-
-A CEA plugin is made up of the following elements:
-
-- description of tools and the parameters they accept (`scripts.yml`)
-
-- a definition of those parameters - default values, descriptions, types etc. (`plugin.config`)
-
-- a definition of the input and output files defined by the plugin (`schemas.yml`)
-
-- a description of the plots (`plots.yml`)
-
 ## A Walkthrough of the CEA plugin template
 
 We've set up a [repository with a sample CEA plugin on GitHub](https://github.com/architecture-building-systems/cea-plugin-template). It implements a script called `demand-summary` as well as a plot called "Total System Demand". Both are located under "Demand Summary". Let's take a look at the files in the template:
@@ -171,7 +159,7 @@ In this example, the category name "Demand Summary" contains a single tool. Each
 
 - `input-files`:  This is an (optional) list of files that need to be present before the script can run. Each entry in the list is itself a list of the form `[locator_method, arg1, arg2, ..., argn]`. The arguments to the locator method are optional. For more information on locator methods, see the description of `schemas.yml`.
 
-The `schemas.yml` file is optional. If you don't provide one, then your plugin can only work on files described elsewhere - e.g. in the CEA or other plugins.
+The `scripts.yml` file is optional. If you don't provide one, then your plugin can only work on files described elsewhere - e.g. in the CEA or other plugins.
 
 ### plots.yml
 

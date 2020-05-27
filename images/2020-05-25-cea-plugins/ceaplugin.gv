@@ -1,0 +1,7 @@
+digraph cea_plugin {
+
+    node[shape=record,style=filled,fillcolor=gray95];
+
+    cea_plugin[label = "{CeaPlugin|+ scripts\l+ plot_categories\l+ schemas\l+ config\l|+ __str__()\l}"];
+
+}

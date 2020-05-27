@@ -10,15 +10,16 @@ This blog series will show you just how to do that. I'll be covering the followi
 
 - Part 1: Introduction to core CEA concepts and how CEA plugins fit in (this article)
 
-- Part 2: Anatomy of a CEA plugin
+- [Part 2: Anatomy of a CEA plugin](2020-05-25-cea-plugins-part-2)
 
 - Part 2: Introduction to the CEA plugin template
 
-- Part 3: How to add your own tools to the CEA
+- [Part 3: Introduction to the CEA plugin template](2020-05-25-cea-plugins-part-3)
 
-- Part 4: How to add your own plots to the CEA
+- [Part 4: How to add your own tools to the CEA](2020-05-25-cea-plugins-part-4)
 
-- Part 5: Publishing your plugin and claiming your T-Shirt
+- [Part 5: How to add your own plots to the CEA](2020-05-25-cea-plugins-part-5)
+- [Part 6: Publish your plugin and claim your T-Shirt](2020-05-25-cea-plugins-part-6)
 
 <!--more-->
 
