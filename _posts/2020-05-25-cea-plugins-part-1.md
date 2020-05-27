@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: CEA Plugins - Part 1: Introduction
 ---
 
@@ -19,6 +19,8 @@ This blog series will show you just how to do that. I'll be covering the followi
 - Part 4: How to add your own plots to the CEA
 
 - Part 5: Publishing your plugin and claiming your T-Shirt
+
+<!--more-->
 
 ## Introduction to core CEA concepts
 
@@ -133,4 +135,54 @@ Each file in the CEA has a "schema" - a description of the properties of this fi
 
 ## Plots
 
+The CEA GUI allows you to create dashboards - collections of plots showing the data created by the CEA tools.
 
+Plots are organized by category. Each plot has a name. You can retrieve the full list of available plots by typing `cea-plot` in the CEA Console:
+
+```
+λ cea-plot
+Usage: cea-plot CATEGORY PLOT-ID [--PARAMETER VALUE]*
+
+Choose from:
+
+comparisons/annualized-costs
+comparisons/annualized-emissions
+demand/comfort-chart
+demand/energy-balance
+[...]
+thermal-networks/thermal-losses-and-pumping-requirements-per-pipe
+thermal-networks/heating-reset-curve
+thermal-networks/pumping-duration-curve
+```
+
+These are the behind-the-scenes names of the plots - the `cea-plot` tool is useful while developing plots as you can easily plot just a single plot from the CEA Console and have it open up in the browser.
+
+Users of the CEA will typically use the Dashboard to view plots:
+
+![Dashboard example](../images/2020-05-25-cea-plugins/cea-dashboard-example.png)
+
+The CEA GUI allows arranging plots into a Dashboard view and allows setting plot parameters:
+
+![Edit Plot Parameters Dialog](../images/2020-05-25-cea-plugins/edit-plot-parameters.png)
+
+You can read up all about how plots are implemented in the CEA core in [CEA Plots the Gory Details](https://daren-thomas.github.io/cea-plots-the-gory-details/). Luckily, creating plots for CEA plugins is much much simpler. But let's not get ahead of ourselves.
+
+## CEA and Plugins
+
+By now, you should understand the core concepts of the CEA core application. The CEA plugin architecture allows you to extend the CEA functionality by
+
+- adding your own tools
+
+- and adding your own plots
+
+to the CEA.
+
+Your tools and plots can define
+
+- their own input files and output files
+
+- and their own parameters
+
+while also making use of those defined in the CEA. In fact, the system is designed to make this _seamless_: Your tools and plots will show up in the GUI in exactly the same places - with the exception that you'll need to define your own categories to place them in.
+
+Learn more in [Part 2: Anatomy of a CEA plugin](2020-05-25-cea-plugins-part-2).
