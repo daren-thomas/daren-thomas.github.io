@@ -1,6 +1,7 @@
 ---
 layout: post
 published: true
+excerpt_separator: <!--more-->
 title: CEA Plugins - Part 2: Anatomy of a CEA plugin
 ---
 
