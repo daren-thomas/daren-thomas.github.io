@@ -23,7 +23,7 @@ This is part 4 in a series of articles on CEA plugins:
 
 - [Part 6: Publish your plugin and claim your T-Shirt](/2020-05-25-cea-plugins-part-6)
 
-## ## Adding tools to the CEA
+## Adding tools to the CEA
 
 Remember the files in the CEA plugin template? Here's a quick reminder:
 
@@ -52,7 +52,7 @@ In this article we'll cover the following files:
 - `schemas.yml`,
 - and`plugin.config
 
-### demand_summary.py
+## demand_summary.py
 
 This file contains an important definition:
 
@@ -97,7 +97,7 @@ if __name__ == "__main__":
    main(cea.config.Configuration())
 ```
 
-### plugin.config
+## plugin.config
 
 The `plugin.config` file describes sections and parameters within those sections for use in your plugin. See the [Configuration File Details](https://city-energy-analyst.readthedocs.io/en/latest/configuration-file-details.html#configuration-file-details) section in the CEA Documentation for more information on how Configuration files work. The `plugin.config` file uses the exact same format as the `default.config` file in the CEA.
 
@@ -116,7 +116,7 @@ This defines a section (`demand-summary`) as well as a parameter (`fudge-factor`
 
 The `plugin.config` file is optional. If you don't specify one, then the scripts in your plugin can only use parameters defined elsewhere - e.g. the CEA or other plugins.
 
-### scripts.yml
+## scripts.yml
 
 The `scripts.yml` file declares the list of tools defined in your plugin. This is how the CEA knows where to find the `demand-summary` script. In fact, the CEA core uses the exact same mechanism to define it's own list of scripts - be sure to check out [the original in the CEA repository](https://github.com/architecture-building-systems/CityEnergyAnalyst/blob/master/cea/scripts.yml).
 
