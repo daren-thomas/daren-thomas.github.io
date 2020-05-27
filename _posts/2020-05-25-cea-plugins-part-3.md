@@ -1,10 +1,14 @@
 ---
 layout: post
-published: false
+published: true
 title: CEA Plugins - Part 3: Introduction to the CEA plugin template
 ---
 
-This is part 3in a series of articles on CEA plugins:
+The easiest was to get started creating your own plugin is to start with the CEA plugin template.
+
+<!--more-->
+
+This is part 3 in a series of articles on CEA plugins:
 
 - [Part 1: Introduction to core CEA concepts](/2020-05-25-cea-plugins-part-1)
 
@@ -304,25 +308,3 @@ A short explaination: `cea-config` is a tool for working with the config file. Y
 Note: You'll need to run that in the CEA Console or an equivalent environment - either by instructing your users or writing an installer.
 
 It's also possible to manually edit the `cea.config` file located in your user folder - 
-
----
-
-- 
-
-- what can be changed / added / extended?
-
-- the plugin template
-  
-  * subclassing CeaPlugin
-  - scripts.yml
-  - schemas.yml
-  - plots.yml
-  - plugin.config
-
-- how does all this stuff relate to the CEA itself?
-
-- the nitty gritty (what to do if the simple plugin is not enough?)
-
-Overview of what a CEA Plugin can do
-
-- note: it doesn't have to do all!
