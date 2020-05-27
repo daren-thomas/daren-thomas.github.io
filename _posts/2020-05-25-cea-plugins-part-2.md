@@ -1,8 +1,7 @@
 ---
 layout: post
 published: true
-excerpt_separator: <!--more-->
-title: CEA Plugins - Part 2: Anatomy of a CEA plugin
+title: "CEA Plugins - Part 2: Anatomy of a CEA plugin"
 ---
 
 Let's take a bird's-eye view of the parts that make up a CEA plugin. We'll cover the interface expected by the CEA when you define a plugin as well as it's default implementation: `cea.plugin.CeaPlugin`.

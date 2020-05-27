@@ -1,8 +1,7 @@
 ---
 layout: post
 published: true
-excerpt_separator: <!--more-->
-title: CEA Plugins - Part 4: How to add your own tools to the CEA
+title: "CEA Plugins - Part 4: How to add your own tools to the CEA"
 ---
 
 Now that you have an overview of the CEA plugin template, let's dive into some of the files responsible for adding  a new tool to the CEA.

@@ -1,8 +1,7 @@
 ---
 layout: post
 published: true
-excerpt_separator: <!--more-->
-title: CEA Plugins - Part 1: Introduction
+title: "CEA Plugins - Part 1: Introduction"
 ---
 
 The City Energy Analyst (CEA) consists of a core set of tools and visualizations of the output of those tools. This article is about extending that set with your own tools and your own visualizations. To do that, you'll need to write a CEA plugin.

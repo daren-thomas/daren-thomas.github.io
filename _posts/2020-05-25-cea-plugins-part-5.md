@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-title: CEA Plugins - Part 5: How to add your own plots to the CEA
+title: "CEA Plugins - Part 5: How to add your own plots to the CEA"
 ---
 
 This article goes into the details of the `plots.yml` file used in CEA plugins.

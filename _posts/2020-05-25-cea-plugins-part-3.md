@@ -1,8 +1,7 @@
 ---
 layout: post
 published: true
-excerpt_separator: <!--more-->
-title: CEA Plugins - Part 3: Introduction to the CEA plugin template
+title: "CEA Plugins - Part 3: Introduction to the CEA plugin template"
 ---
 
 The easiest was to get started creating your own plugin is to start with the CEA plugin template. In this article, we'll get you started with your own plugin based on the [CEA plugin template on GitHub](https://github.com/architecture-building-systems/cea-plugin-template).

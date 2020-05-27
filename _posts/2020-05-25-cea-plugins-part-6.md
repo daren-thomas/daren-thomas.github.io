@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-title: CEA Plugins - Part 6: Publish your plugin and claim your T-Shirt
+title: "CEA Plugins - Part 6: Publish your plugin and claim your T-Shirt"
 ---
 
 You've coded up your CEA plugin - now it's time to add it to the CEA and share it with the rest of the world!
