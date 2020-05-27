@@ -4,19 +4,19 @@ published: false
 title: CEA Plugins - Part 3: Introduction to the CEA plugin template
 ---
 
-This is part 2 in a series of articles on CEA plugins:
+This is part 3in a series of articles on CEA plugins:
 
-- [Part 1: Introduction to core CEA concepts](2020-05-25-cea-plugins-part-1)
+- [Part 1: Introduction to core CEA concepts](/2020-05-25-cea-plugins-part-1)
 
-- [Part 2: Anatomy of a CEA plugin](2020-05-25-cea-plugins-part-2) 
+- [Part 2: Anatomy of a CEA plugin](/2020-05-25-cea-plugins-part-2) 
 
 - Part 3: Introduction to the CEA plugin template (this article)
 
-- [Part 4: How to add your own tools to the CEA](2020-05-25-cea-plugins-part-4)
+- [Part 4: How to add your own tools to the CEA](/2020-05-25-cea-plugins-part-4)
 
-- [Part 5: How to add your own plots to the CEA](2020-05-25-cea-plugins-part-5)
+- [Part 5: How to add your own plots to the CEA](/2020-05-25-cea-plugins-part-5)
 
-- [Part 6: Publish your plugin and claim your T-Shirt](2020-05-25-cea-plugins-part-6)
+- [Part 6: Publish your plugin and claim your T-Shirt](/2020-05-25-cea-plugins-part-6)
 
 ## A Walkthrough of the CEA plugin template
 
