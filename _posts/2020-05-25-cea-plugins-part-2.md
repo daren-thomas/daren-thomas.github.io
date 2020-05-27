@@ -6,23 +6,23 @@ title: "CEA Plugins - Part 2: Anatomy of a CEA plugin"
 
 Let's take a bird's-eye view of the parts that make up a CEA plugin. We'll cover the interface expected by the CEA when you define a plugin as well as it's default implementation: `cea.plugin.CeaPlugin`.
 
-If you'd rather just start with an example and tinker from there, skip to [Part 3: Introduction to the CEA plugin template](2020-05-25-cea-plugins-part-3) and come back here if you have any questions.
+If you'd rather just start with an example and tinker from there, skip to [Part 3: Introduction to the CEA plugin template](/cea-plugins-part-3) and come back here if you have any questions.
 
 <!--more-->
 
 This is part 2 in a series of articles on CEA plugins:
 
-- [Part 1: Introduction to core CEA concepts](/2020-05-25-cea-plugins-part-1)
+- [Part 1: Introduction to core CEA concepts](/cea-plugins-part-1)
 
 - Part 2: Anatomy of a CEA plugin (this article)
 
-- [Part 3: Introduction to the CEA plugin template](/2020-05-25-cea-plugins-part-3)
+- [Part 3: Introduction to the CEA plugin template](/cea-plugins-part-3)
 
-- [Part 4: How to add your own tools to the CEA](/2020-05-25-cea-plugins-part-4)
+- [Part 4: How to add your own tools to the CEA](/cea-plugins-part-4)
 
-- [Part 5: How to add your own plots to the CEA](/2020-05-25-cea-plugins-part-5)
+- [Part 5: How to add your own plots to the CEA](/cea-plugins-part-5)
 
-- [Part 6: Publish your plugin and claim your T-Shirt](/2020-05-25-cea-plugins-part-6)
+- [Part 6: Publish your plugin and claim your T-Shirt](/cea-plugins-part-6)
 
 ## Anatomy of a CEA plugin
 
@@ -49,7 +49,7 @@ The default implementation of the `scripts` property will read a `scripts.yml` f
 
 The `scripts.yml` file is optional. If you don't provide one, then your plugin does not provide any scripts.
 
-See [Part 3: Introduction to the CEA plugin template](2020-05-25-cea-plugins-part-3) for an in-depth look at the contents of such a file - or browse the `cea/scripts.yml` file that defines the [CEA core scripts on GitHub](https://github.com/architecture-building-systems/CityEnergyAnalyst/blob/master/cea/scripts.yml).
+See [Part 3: Introduction to the CEA plugin template](/cea-plugins-part-3) for an in-depth look at the contents of such a file - or browse the `cea/scripts.yml` file that defines the [CEA core scripts on GitHub](https://github.com/architecture-building-systems/CityEnergyAnalyst/blob/master/cea/scripts.yml).
 
 ## plot_categories
 
@@ -57,7 +57,7 @@ Each plot in the CEA is part of a category - this is represented internally by t
 
 The default implementation reads a `plots.yml` file in the same folder as the class is defined in and builds subclasses of `cea.plugin.PluginPlotBase` automatically.
 
-See [Part 5: How to add your own plots to the CEA](2020-05-25-cea-plugins-part-5) for a full explaination of how to write a `plots.yml` file.
+See [Part 5: How to add your own plots to the CEA](/cea-plugins-part-5) for a full explaination of how to write a `plots.yml` file.
 
 The `plots.yml` file is optional. If you don't provide one, then your plugin does not provide any plots
 
@@ -120,4 +120,4 @@ class MyPlugin(cea.plugin.CeaPlugin):
 
 This is already a valid plugin, although one that doesn't really do much - adding the files mentioned above (`scripts.yml`, `plots.yml`, `schemas.yml` and `plugin.config`) will automatically add functionality to your plugin.
 
-A good starting point is the [CEA plugin template repository on GitHub]([https://github.com/architecture-building-systems/cea-plugin-template](https://github.com/architecture-building-systems/cea-plugin-template)) - read all about that in [Part 3: Introduction to the CEA plugin template](2020-05-25-cea-plugins-part-3)!
+A good starting point is the [CEA plugin template repository on GitHub]([https://github.com/architecture-building-systems/cea-plugin-template](https://github.com/architecture-building-systems/cea-plugin-template)) - read all about that in [Part 3: Introduction to the CEA plugin template](/cea-plugins-part-3)!

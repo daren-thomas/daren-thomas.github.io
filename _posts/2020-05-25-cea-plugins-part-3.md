@@ -10,17 +10,17 @@ The easiest was to get started creating your own plugin is to start with the CEA
 
 This is part 3 in a series of articles on CEA plugins:
 
-- [Part 1: Introduction to core CEA concepts](/2020-05-25-cea-plugins-part-1)
+- [Part 1: Introduction to core CEA concepts](/cea-plugins-part-1)
 
-- [Part 2: Anatomy of a CEA plugin](/2020-05-25-cea-plugins-part-2) 
+- [Part 2: Anatomy of a CEA plugin](/cea-plugins-part-2) 
 
 - Part 3: Introduction to the CEA plugin template (this article)
 
-- [Part 4: How to add your own tools to the CEA](/2020-05-25-cea-plugins-part-4)
+- [Part 4: How to add your own tools to the CEA](/cea-plugins-part-4)
 
-- [Part 5: How to add your own plots to the CEA](/2020-05-25-cea-plugins-part-5)
+- [Part 5: How to add your own plots to the CEA](/cea-plugins-part-5)
 
-- [Part 6: Publish your plugin and claim your T-Shirt](/2020-05-25-cea-plugins-part-6)
+- [Part 6: Publish your plugin and claim your T-Shirt](/cea-plugins-part-6)
 
 ## Introduction to the CEA plugin template
 
@@ -74,9 +74,9 @@ Note that you'll want to rename the package`cea_plugin_template` to something mo
 
 In this article, we'll quickly discuss `.gitignore`, `LICENSE`, `README.md` and `setup.py` as well as `_cea_plugin_template`.
 
-The files `scripts.yml`, `demand_summary.py`, `schemas.yml`,  and`plugin.config` will be discussed in [Part 4: How to add your own tools to the CEA](/2020-05-25-cea-plugins-part-4).
+The files `scripts.yml`, `demand_summary.py`, `schemas.yml`,  and`plugin.config` will be discussed in [Part 4: How to add your own tools to the CEA](/cea-plugins-part-4).
 
-The file `plots.yml` get's it's own article: [Part 5: How to add your own plots to the CEA](/2020-05-25-cea-plugins-part-5)
+The file `plots.yml` get's it's own article: [Part 5: How to add your own plots to the CEA](/cea-plugins-part-5)
 
 ### .gitignore, LICENSE and README.md
 

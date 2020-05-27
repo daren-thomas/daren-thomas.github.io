@@ -10,17 +10,17 @@ This article goes into the details of the `plots.yml` file used in CEA plugins.
 
 This is part 4 in a series of articles on CEA plugins:
 
-- [Part 1: Introduction to core CEA concepts](/2020-05-25-cea-plugins-part-1)
+- [Part 1: Introduction to core CEA concepts](/cea-plugins-part-1)
 
-- [Part 2: Anatomy of a CEA plugin](/2020-05-25-cea-plugins-part-2) 
+- [Part 2: Anatomy of a CEA plugin](/cea-plugins-part-2) 
 
-- [Part 3: Introduction to the CEA plugin template](/2020-05-25-cea-plugins-part-3) 
+- [Part 3: Introduction to the CEA plugin template](/cea-plugins-part-3) 
 
 - Part 4: How to add your own tools to the CEA (this article)
 
-- [Part 5: How to add your own plots to the CEA](/2020-05-25-cea-plugins-part-5)
+- [Part 5: How to add your own plots to the CEA](/cea-plugins-part-5)
 
-- [Part 6: Publish your plugin and claim your T-Shirt](/2020-05-25-cea-plugins-part-6)
+- [Part 6: Publish your plugin and claim your T-Shirt](/cea-plugins-part-6)
 
 ## plots.yml
 

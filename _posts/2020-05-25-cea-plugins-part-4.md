@@ -10,17 +10,17 @@ Now that you have an overview of the CEA plugin template, let's dive into some o
 
 This is part 4 in a series of articles on CEA plugins:
 
-- [Part 1: Introduction to core CEA concepts](/2020-05-25-cea-plugins-part-1)
+- [Part 1: Introduction to core CEA concepts](/cea-plugins-part-1)
 
-- [Part 2: Anatomy of a CEA plugin](/2020-05-25-cea-plugins-part-2) 
+- [Part 2: Anatomy of a CEA plugin](/cea-plugins-part-2) 
 
-- [Part 3: Introduction to the CEA plugin template](/2020-05-25-cea-plugins-part-3) 
+- [Part 3: Introduction to the CEA plugin template](/cea-plugins-part-3) 
 
 - Part 4: How to add your own tools to the CEA (this article)
 
-- [Part 5: How to add your own plots to the CEA](/2020-05-25-cea-plugins-part-5)
+- [Part 5: How to add your own plots to the CEA](/cea-plugins-part-5)
 
-- [Part 6: Publish your plugin and claim your T-Shirt](/2020-05-25-cea-plugins-part-6)
+- [Part 6: Publish your plugin and claim your T-Shirt](/cea-plugins-part-6)
 
 ## Adding tools to the CEA
 
@@ -42,7 +42,7 @@ my-awesome-plugin
         __init__.py
 ```
 
-We've already covered some of these files  in [Part 3: Introduction to the CEA plugin template](/2020-05-25-cea-plugins-part-3).
+We've already covered some of these files  in [Part 3: Introduction to the CEA plugin template](/cea-plugins-part-3).
 
 In this article we'll cover the following files:
 
@@ -156,4 +156,4 @@ The `scripts.yml` file is optional. If you don't provide one, then your plugin c
 
 ## Summary
 
-We've covered all the files necessary to add a new tool to the CEA using the CEA plugin template - in [Part 5: How to add your own plots to the CEA](/2020-05-25-cea-plugins-part-5) we'll add the final touch.
+We've covered all the files necessary to add a new tool to the CEA using the CEA plugin template - in [Part 5: How to add your own plots to the CEA](/cea-plugins-part-5) we'll add the final touch.

@@ -12,15 +12,15 @@ This blog series will show you just how to do that. I'll be covering the followi
 
 - Part 1: Introduction to core CEA concepts and how CEA plugins fit in (this article)
 
-- [Part 2: Anatomy of a CEA plugin](/2020-05-25-cea-plugins-part-2)
+- [Part 2: Anatomy of a CEA plugin](/cea-plugins-part-2)
 
-- [Part 3: Introduction to the CEA plugin template](/2020-05-25-cea-plugins-part-3)
+- [Part 3: Introduction to the CEA plugin template](/cea-plugins-part-3)
 
-- [Part 4: How to add your own tools to the CEA](/2020-05-25-cea-plugins-part-4)
+- [Part 4: How to add your own tools to the CEA](/cea-plugins-part-4)
 
-- [Part 5: How to add your own plots to the CEA](/2020-05-25-cea-plugins-part-5)
+- [Part 5: How to add your own plots to the CEA](/cea-plugins-part-5)
 
-- [Part 6: Publish your plugin and claim your T-Shirt](/2020-05-25-cea-plugins-part-6)
+- [Part 6: Publish your plugin and claim your T-Shirt](/cea-plugins-part-6)
 
 ## Introduction to core CEA concepts
 
@@ -185,4 +185,4 @@ Your tools and plots can define
 
 while also making use of those defined in the CEA. In fact, the system is designed to make this _seamless_: Your tools and plots will show up in the GUI in exactly the same places - with the exception that you'll need to define your own categories to place them in.
 
-Learn more in [Part 2: Anatomy of a CEA plugin](2020-05-25-cea-plugins-part-2).
+Learn more in [Part 2: Anatomy of a CEA plugin](/cea-plugins-part-2).
