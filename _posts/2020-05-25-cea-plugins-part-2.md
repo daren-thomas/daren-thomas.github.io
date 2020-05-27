@@ -12,17 +12,17 @@ If you'd rather just start with an example and tinker from there, skip to [Part 
 
 This is part 2 in a series of articles on CEA plugins:
 
-- [Part 1: Introduction to core CEA concepts](2020-05-25-cea-plugins-part-1)
+- [Part 1: Introduction to core CEA concepts](/2020-05-25-cea-plugins-part-1)
 
 - Part 2: Anatomy of a CEA plugin (this article)
 
-- [Part 3: Introduction to the CEA plugin template](2020-05-25-cea-plugins-part-3)
+- [Part 3: Introduction to the CEA plugin template](/2020-05-25-cea-plugins-part-3)
 
-- [Part 4: How to add your own tools to the CEA](2020-05-25-cea-plugins-part-4)
+- [Part 4: How to add your own tools to the CEA](/2020-05-25-cea-plugins-part-4)
 
-- [Part 5: How to add your own plots to the CEA](2020-05-25-cea-plugins-part-5)
+- [Part 5: How to add your own plots to the CEA](/2020-05-25-cea-plugins-part-5)
 
-- [Part 6: Publish your plugin and claim your T-Shirt](2020-05-25-cea-plugins-part-6)
+- [Part 6: Publish your plugin and claim your T-Shirt](/2020-05-25-cea-plugins-part-6)
 
 ## Anatomy of a CEA plugin
 
