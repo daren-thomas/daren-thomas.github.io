@@ -61,35 +61,3 @@ The `data` part of a plot definition specifies:
 The `layout` part specifies how the plot is to be shown. The contents are passed off to the `iplot` method from the [cufflinks library](https://github.com/santosjorge/cufflinks). Check the [documentation on the `iplot` method](https://nbviewer.ipython.org/gist/santosjorge/f3b07b2be8094deea8c6) for more information on valid parameters.
 
 The class `cea.plugin.PluginPlotBase` simplifies plot creation _a lot_ compared to how the CEA core creates plots. This comes at the expense of flexibility. If you need more fine-grained controll over your plots, you can override the `plots` property in your plugin (check `cea.plugin.CeaPlugin` for the original definition) to return your own plot classes (possibly derived from `cea.plots.base.PlotBase`) - See [CEA Plots - the Gory Details](https://daren-thomas.github.io/cea-plots-the-gory-details/) for more information on how to do that.
-
-## Publishing your plugin
-
-While developing your plugin, you can use the command `pip -e .` in the repository folder to install your plugin to python in "editable mode": This tells Python to check that folder for the current version of the source code.
-
-Once you've finished testing and debugging you can [deploy the plugin to PyP](https://realpython.com/pypi-publish-python-package/)I. This is not a requirement - you might not want to share the source with the rest of the world - but it _does_ make installation on another computer a bit easier: Your user will then just do a `pip install <yourplugin>`.
-
-Regardless of how you'll be deploying your plugin, please note that it needs to be installed in the _same_ python environment that the CEA uses. Using the `pip` method above, that means running it form the CEA Console.
-
-## Registering a CEA plugin with the CEA
-
-The CEA config file maintains a list of CEA plugins - by default it's an empty list. You can view that list from the CEA Console with `cea-config read general:plugins`:
-
-```
-λ cea-config read general:plugins
-- general:plugins = []
-  (default: [])
-```
-
-BTW: You can use this command to read any parameter in the user config file (`cea.config` in your user profile folder).
-
-To add a plugin to that list, you can do something like this:
-
-```
-λ cea-config write --general:plugins {general:plugins}, cea_plugin_template.DemandSummaryPlugin
-```
-
-A short explaination: `cea-config` is a tool for working with the config file. You guessed that already. `write` means: write to the config file. `--general:plugins` denotes the secion and parameter the following text is to be written to. Since the plugins list is a, well, a list, it's encoded as a string with commas separating them. We have two values here: `{general:plugins}` and `cea_plugin_template.DemandSummaryPlugin`. `{general:plugins}` will be expanded to the previous list of plugins.
-
-Note: You'll need to run that in the CEA Console or an equivalent environment - either by instructing your users or writing an installer.
-
-It's also possible to manually edit the `cea.config` file located in your user folder - 
