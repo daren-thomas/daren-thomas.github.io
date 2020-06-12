@@ -120,4 +120,4 @@ class MyPlugin(cea.plugin.CeaPlugin):
 
 This is already a valid plugin, although one that doesn't really do much - adding the files mentioned above (`scripts.yml`, `plots.yml`, `schemas.yml` and `plugin.config`) will automatically add functionality to your plugin.
 
-A good starting point is the [CEA plugin template repository on GitHub]([https://github.com/architecture-building-systems/cea-plugin-template](https://github.com/architecture-building-systems/cea-plugin-template)) - read all about that in [Part 3: Introduction to the CEA plugin template](/cea-plugins-part-3)!
+A good starting point is the [CEA plugin template repository on GitHub](https://github.com/architecture-building-systems/cea-plugin-template) - read all about that in [Part 3: Introduction to the CEA plugin template](/cea-plugins-part-3)!
