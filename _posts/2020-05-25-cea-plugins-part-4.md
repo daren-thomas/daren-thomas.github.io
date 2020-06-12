@@ -49,7 +49,7 @@ In this article we'll cover the following files:
 - `demand_summary.py`,
 - `scripts.yml`,
 - `schemas.yml`,
-- and`plugin.config
+- and `plugin.config`
 
 ## demand_summary.py
 
@@ -153,6 +153,78 @@ In this example, the category name "Demand Summary" contains a single tool. Each
 - `input-files`:  This is an (optional) list of files that need to be present before the script can run. Each entry in the list is itself a list of the form `[locator_method, arg1, arg2, ..., argn]`. The arguments to the locator method are optional. For more information on locator methods, see the description of `schemas.yml`.
 
 The `scripts.yml` file is optional. If you don't provide one, then your plugin can only work on files described elsewhere - e.g. in the CEA or other plugins.
+
+## schemas.yml
+
+The file `schemas.yml` defines the shape of input files and output files used by scripts (and plots) in the CEA as well as their location inside a scenario.  The CEA core uses exact same mechanism for definining it's own data files - each entry in the `schemas.yml` defines a *locator method*,  a method of the `cea.inputlocator.InputLocator` class that is used throughout the CEA to locate data files.  
+
+These _locator methods_ are used in places like the `input-files` key in `scripts.yml` as well as the `location` part of `plots.yml`. They're also used for reading Dataframes from (and writing them to) disk.
+
+When the CEA creates an `InputLocator` object, the information from your plugin is appended to the list of known locator methods.
+
+Each entry in the `schemas.yml` file is the name of a locator method. Here's the example from the CEA plugin template:
+
+```yaml
+demand_summary:
+  created_by:
+  - demand-summary
+  file_path: outputs/data/demand-summary/demand-summary.csv
+  file_type: csv
+  schema:
+    columns:
+      Name:
+        description: Unique building ID. It must start with a letter.
+        type: string
+        unit: NA
+        values: alphanumeric
+      GFA_m2:
+        description: Gross floor area
+        type: float
+        unit: '[m2]'
+        min: 0.0
+        values: '{0.0...n}'
+      QC_sys_MWhyr:
+        description: Total system cooling demand
+        type: float
+        min: 0.0
+        unit: '[MWh/yr]'
+        values: '{0.0...n}'
+        plot-color: blue
+      QH_sys_MWhyr:
+        description: Total system heating demand
+        type: float
+        min: 0.0
+        unit: '[MWh/yr]'
+        values: '{0.0...n}'
+        plot-color: red
+  used_by: []
+```
+
+There's quite a lot going on here, so let's take it apart piece by piece:
+
+- `demand_summary` the first line defines the name of a locator method - the CEA adds this to the `cea.inputlocator.InputLocator` instances at runtime. This means you can do things like `locator.demand_sumary()` to get the path to the file `outputs/data/demand-summary/demand-summary.csv` located in the current scenario.
+
+- `created_by`: A list of script names (entries in `scripts.yml` - either the one defined in your plugin or the one defined by CEA) that produce this file.
+
+- `file_path`: The path to the file, relative to the scenario path. This path may include variable references in the form `{variable_name}`. When calling a locator method, you can pass in additional keywords, like this: `locator.demand_summary(variable_name="abc")` and the result will have the replacement. Note that with `read()` and `write()` you'll also need to pass in these variables.
+
+- `file_type`: The type of file this locator method points to. Currently, for plugins, we suggest using `csv` files. The class `cea.schemas.CsvSchemaIo` has some nice features - like reading and writing DataFrames as well as validation of the schema on reading / writing. This functionality will be extended for the other file types known to the CEA at a later stage.
+
+- `schema`: For "flat" file types like `csv`, `dbf` and `shp` files, the contents of the `schema` dictionary is just `columns`, which itself is a dictionary of columns contained inside the data file.
+
+A column definition contains the following keys:
+
+- `description`: A description of the contents of the column. This is also used for the legend in columns that are plotted.
+
+- `type`: The type of the data in the column. The CEA knows about `string`, `int` ,  `float`, `date` and `boolean` column types. Files with `file_type: shp` (shapefiles) also can have `Point`, `Polygon` and `LineString`.
+
+- `unit`: Describes the unit of a column - especially for columns of type `float`, this is usually the physical unit of measurment. By convention, we place the unit inside square brackets - see the example for `QH_sys_MWhyr`: `unit: "[[MWh/yr]]"`. If a unit is not available / does not apply, use `NA` instead.
+
+- `values`: This is a short description for the user of the type of values to be found in here and ignored by the CEA.
+
+- `min` / `max`: Columns with types `int` or `float` can optionally specify minimum and maximum values for the range of data in the column. E.g. set `min` to `0.0` to specify that only positive values are to be found in the column.
+
+- `plot-color` : Optional. If a column is used in a plot, this color will be used to plot that series. This is either a color in the format `"rgb(255, 255, 255)"` or a color taken from the list in `cea/plots/colors.py` like "red", "blue" etc.
 
 ## Summary
 
